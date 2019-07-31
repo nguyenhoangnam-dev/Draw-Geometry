@@ -9,7 +9,7 @@ var axisY = Math.round((axisX * hei / wid) * 100) / 100;
 
 // This create new coordinate
 var brd = JXG.JSXGraph.initBoard("jxgbox", {
-    axis: true,
+
     boundingbox: [-axisX, axisY, axisX, -axisY],
     showCopyright: false
 });
