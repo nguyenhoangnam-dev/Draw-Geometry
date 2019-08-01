@@ -1,4 +1,4 @@
-# Draw-Geometry (VERSION 1.2.0)
+# Draw-Geometry (v1.2.0)
 This is similar with GSP and geogebra but open-source
 
 
