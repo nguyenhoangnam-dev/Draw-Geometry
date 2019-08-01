@@ -16,6 +16,10 @@
     type="text/css"
     href="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraph.css"
   />
+  <link
+    href="css/color-picker.min.css"
+    rel="stylesheet"
+  >
   <title>Demo 1 - app to draw geometry</title>
   <style>
     html {
@@ -32,12 +36,11 @@
       height: 100px;
       width: 100%;
       display: flex;
+      justify-content: space-between
     }
 
     .option {
       height: 100px;
-      width: 50%;
-      /* border-bottom: 1px solid black; */
     }
 
     .position {
@@ -50,7 +53,6 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: flex-start;
-      /* align-content: space-between; */
     }
 
     .flex-container>div {
@@ -75,7 +77,6 @@
     .other {
       font-size: 13px;
       height: 100px;
-      width: 50%;
       display: flex;
       justify-content: flex-end;
       flex-wrap: wrap;
@@ -90,6 +91,20 @@
       margin: 10px;
       text-align: center;
       line-height: 45px;
+    }
+
+    #setting>div {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    #setting>div>input {
+      border: 1px solid black;
+    }
+
+    #setting>div>label {
+      display: inline-block;
+      width: 50px;
     }
   </style>
 </head>
@@ -107,6 +122,26 @@
       <div id="conic">Conic</div>
     </div>
     <div
+      id="setting"
+      class="setting"
+    >
+      <div>
+        <label for="fillColor">Fill</label>
+        <input
+          type="text"
+          id="fillColor"
+        >
+      </div>
+      <div>
+        <label for="strokeColor">Stroke</label>
+        <input
+          type="text"
+          id="strokeColor"
+        >
+      </div>
+    </div>
+    <div class="search"></div>
+    <div
       id="moreTool"
       class="other"
     ></div>
@@ -122,7 +157,7 @@
     charset="UTF-8"
     src="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.7/jsxgraphcore.js"
   ></script>
-
+  <script src="js/color-picker.min.js"></script>
   <script src="js/function.js"></script>
   <script src="js/variable.js"></script>
   <script src="js/index.js"></script>

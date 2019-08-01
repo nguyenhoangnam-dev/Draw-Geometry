@@ -23,14 +23,19 @@ var circle = document.getElementById("circle");
 var conic = document.getElementById("conic");
 var choice = [mouse, point, line, circle, conic];
 
+// This for color-picker
+var fill = document.getElementById("fillColor");
+fill.value = ""
+var fillColor = new CP(fill);
+var stroke = document.getElementById("strokeColor");
+stroke.value = ""
+var strokeColor = new CP(stroke);
+
 // This array contain all point
 var allPoint = [];
 
 // This are all lines
 var allLine = [];
-
-// This is fucking crazy idea
-var aphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
 // This show this point in line
 var isLine = [];
@@ -109,3 +114,6 @@ var circum = []
 
 // This for incircle
 var incircle = []
+
+var saveLastPoint = [];
+var saveLastPoint2 = [];

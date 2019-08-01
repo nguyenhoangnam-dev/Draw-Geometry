@@ -1,6 +1,3 @@
-addChoice(choice, circle);
-addChoice(choice, conic);
-
 // This use for default choice
 
 tex = document.createTextNode("Normal");
@@ -25,7 +22,6 @@ four = document.getElementById('four')
 five = document.getElementById('five')
 
 mouse.addEventListener("click", () => {
-    clearChoice(choiceTool);
     if (checkChoice(choice) != 0) {
         while (moreTool.hasChildNodes()) {
             child = moreTool.firstChild;
@@ -36,6 +32,7 @@ mouse.addEventListener("click", () => {
         }
 
         clearChoice(choice);
+        clearChoice(choiceTool);
         mouse.classList.add("choice");
         tex = document.createTextNode("Normal");
         squareDiv.appendChild(tex);
@@ -61,7 +58,6 @@ mouse.addEventListener("click", () => {
 });
 
 point.addEventListener("click", () => {
-    clearChoice(choiceTool);
     if (checkChoice(choice) != 1) {
         while (moreTool.hasChildNodes()) {
             child = moreTool.firstChild;
@@ -73,6 +69,7 @@ point.addEventListener("click", () => {
         }
 
         clearChoice(choice);
+        clearChoice(choiceTool);
         point.classList.add("choice");
         tex = document.createTextNode("Normal");
         squareDiv.appendChild(tex);
@@ -95,7 +92,6 @@ point.addEventListener("click", () => {
 });
 
 line.addEventListener("click", () => {
-    clearChoice(choiceTool);
     if (checkChoice(choice) != 2) {
         while (moreTool.hasChildNodes()) {
             child = moreTool.firstChild;
@@ -106,6 +102,7 @@ line.addEventListener("click", () => {
         }
 
         clearChoice(choice);
+        clearChoice(choiceTool);
         line.classList.add("choice");
         tex = document.createTextNode("Normal");
         squareDiv.appendChild(tex);
@@ -132,7 +129,6 @@ line.addEventListener("click", () => {
 });
 
 circle.addEventListener("click", () => {
-    clearChoice(choiceTool);
     if (checkChoice(choice) != 2) {
         while (moreTool.hasChildNodes()) {
             child = moreTool.firstChild;
@@ -143,6 +139,7 @@ circle.addEventListener("click", () => {
         }
 
         clearChoice(choice);
+        clearChoice(choiceTool);
         circle.classList.add("choice");
         tex = document.createTextNode("Normal");
         squareDiv.appendChild(tex);
@@ -165,7 +162,6 @@ circle.addEventListener("click", () => {
 });
 
 conic.addEventListener("click", () => {
-    clearChoice(choiceTool);
     if (checkChoice(choice) != 2) {
         while (moreTool.hasChildNodes()) {
             child = moreTool.firstChild;
@@ -176,6 +172,7 @@ conic.addEventListener("click", () => {
         }
 
         clearChoice(choice);
+        clearChoice(choiceTool);
         conic.classList.add("choice");
         tex = document.createTextNode("Normal");
         squareDiv.appendChild(tex);
@@ -223,18 +220,26 @@ four.addEventListener("click", () => {
     }
 });
 
-
 five.addEventListener("click", () => {
     clearChoice(choiceTool);
     five.classList.add("choice");
 
 });
 
-
 document.getElementById("jxgbox").addEventListener("click", click => {
     if (checkChoice(choice) >= 1) {
         if (checkChoice(choice) == 1) {
+            isLine = []
+            perp = []
+            para = []
+            segment = []
+            ang = []
+            isCirc = []
+            circum = []
+            incircle = []
             if (checkChoice(choiceTool) == 0) {
+                mid = []
+                inter = []
                 var clickX = click.pageX;
                 var clickY = click.pageY;
                 var pointX = coorX(clickX);
@@ -245,6 +250,7 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                     })
                 );
             } else if (checkChoice(choiceTool) == 1) {
+                inter = []
                 pointChoice = whichPoint(allPoint);
                 if (mid.length == 0) {
                     if (pointChoice + 1) {
@@ -280,6 +286,7 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                     mid = []
                 }
             } else {
+                mid = []
                 lineChoice = whichLine(allLine);
                 circChoice = whichCirc(allCirc);
                 if (inter.length == 0) {
@@ -309,12 +316,21 @@ document.getElementById("jxgbox").addEventListener("click", click => {
             }
 
         } else if (checkChoice(choice) == 2) {
+            mid = []
+            inter = []
+            isCirc = []
+            circum = []
+            incircle = []
             pointChoice = whichPoint(allPoint);
             lineChoice = whichLine(allLine);
             if (pointChoice + 1) {
                 lineChoice = -1
             }
             if (checkChoice(choiceTool) == 0) {
+                segment = []
+                perp = []
+                para = []
+                ang = []
                 if (isLine.length == 0) {
                     if (pointChoice + 1) {
                         isLine.push(allPoint[pointChoice].name);
@@ -354,6 +370,10 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                     isLine = [];
                 }
             } else if (checkChoice(choiceTool) == 1) {
+                isLine = []
+                para = []
+                segment = []
+                ang = []
                 if (perp.length == 0) {
                     if (lineChoice + 1) {
                         perp.push(allLine[lineChoice])
@@ -380,6 +400,10 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                     }
                 }
             } else if (checkChoice(choiceTool) == 2) {
+                isLine = []
+                perp = []
+                segment = []
+                ang = []
                 if (para.length == 0) {
                     if (lineChoice + 1) {
                         para.push(allLine[lineChoice])
@@ -406,6 +430,10 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                     }
                 }
             } else if (checkChoice(choiceTool) == 3) {
+                isLine = []
+                perp = []
+                para = []
+                ang = []
                 if (segment.length == 0) {
                     if (pointChoice + 1) {
                         segment.push(allPoint[pointChoice].name);
@@ -445,6 +473,10 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                     segment = [];
                 }
             } else {
+                isLine = []
+                perp = []
+                para = []
+                segment = []
                 if (ang.length == 0) {
                     if (pointChoice + 1) {
                         ang.push(allPoint[pointChoice].name);
@@ -499,8 +531,17 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                 }
             }
         } else if (checkChoice(choice) == 3) {
+            isLine = []
+            perp = []
+            para = []
+            segment = []
+            ang = []
+            mid = []
+            inter = []
             pointChoice = whichPoint(allPoint);
             if (checkChoice(choiceTool) == 0) {
+                circum = []
+                incircle = []
                 if (isCirc.length == 0) {
                     if (pointChoice + 1) {
                         isCirc.push(allPoint[pointChoice].name);
@@ -540,6 +581,8 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                     isCirc = [];
                 }
             } else if (checkChoice(choiceTool) == 1) {
+                isCirc = []
+                incircle = []
                 if (circum.length == 0) {
                     if (pointChoice + 1) {
                         circum.push(allPoint[pointChoice]);
@@ -556,6 +599,8 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                     }
                 }
             } else if (checkChoice(choiceTool) == 2) {
+                isCirc = []
+                circum = []
                 if (incircle.length == 0) {
                     if (pointChoice + 1) {
                         incircle.push(allPoint[pointChoice]);
@@ -574,6 +619,16 @@ document.getElementById("jxgbox").addEventListener("click", click => {
             }
         }
     } else if (checkChoice(choice) == 0) {
+        isLine = []
+        perp = []
+        para = []
+        segment = []
+        ang = []
+        mid = []
+        inter = []
+        isCirc = []
+        circum = []
+        incircle = []
         pointChoice = whichPoint(allPoint);
         lineChoice = whichLine(allLine);
         circChoice = whichCirc(allCirc);
@@ -592,6 +647,73 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                 });
             }
         }
+
+        // This use to change coor of point
+        if (saveLastPoint.length != 0) {
+            if (pointChoice == saveLastPoint[0]) {
+                fill.value = saveLastPoint[1]
+                fill.disabled = false
+            } else if (pointChoice + 1) {
+                fill.value = ""
+                fill.disabled = false
+            } else {
+                fill.value = ""
+                fill.disabled = true
+            }
+        } else {
+            if (pointChoice + 1) {
+                fill.value = ""
+                fill.disabled = false
+            } else if (circChoice + 1) {
+                fill.value = ""
+                fill.disabled = true
+            } else if (lineChoice + 1) {
+                fill.value = ""
+                fill.disabled = true
+            }
+        }
+
+        fillColor.on("change", color => {
+            if (pointChoice + 1) {
+                allPoint[pointChoice].setAttribute({
+                    highlightFillColor: '#' + color
+                });
+                fill.value = "#" + color
+                saveLastPoint.push(pointChoice)
+                saveLastPoint.push(fill.value)
+            }
+        });
+
+
+        // This use to change color of stroke
+        if (saveLastPoint2.length == 0) {
+            stroke.value = ""
+        } else {
+            stroke.value = saveLastPoint2[0]
+        }
+
+        strokeColor.on("change", color => {
+            if (pointChoice + 1) {
+                allPoint[pointChoice].setAttribute({
+                    strokeColor: '#' + color
+                });
+                stroke.value = "#" + color
+                saveLastPoint2.push(stroke.value)
+            } else if (lineChoice + 1) {
+                allLine[lineChoice].setAttribute({
+                    strokeColor: '#' + color
+                });
+                stroke.value = "#" + color
+                saveLastPoint2.push(stroke.value)
+            } else if (circChoice + 1) {
+                allCirc[circChoice].setAttribute({
+                    strokeColor: '#' + color
+                });
+                stroke.value = "#" + color
+                saveLastPoint2.push(stroke.value)
+            }
+        });
+
     }
     for (var i = 0; i < allPoint.length; i++) {
         allPoint[i].highlighted = true;
