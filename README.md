@@ -1,5 +1,5 @@
 <p align="center">
- <h1 align="center">Draw-Geometry (v1.3.0)</h1>
+ <img src="https://raw.githubusercontent.com/congviec18120062/Draw-Geometry/master/img/TitleLogo.png" alt="Draw-Geometry (v1.3.0)" />
 </p>
 <p align="center">
     <a href="https://github.com/congviec18120062/Draw-Geometry/issues" alt="GitHub issues">
@@ -19,7 +19,7 @@
     </a>
 </p>
 
-# Draw-Geometry
+# Draw-Geometry (v1.3.0)
 This is [drawing-app](https://congviec18120062.github.io/Draw-Geometry/) with simple UI. Moreover, my inspiration is GSP and Geogebra which I use during highschool.
 
 ![Feuerbach theorem](https://raw.githubusercontent.com/congviec18120062/Draw-Geometry/master/img/Feuerbach%20theorem.jpg)
