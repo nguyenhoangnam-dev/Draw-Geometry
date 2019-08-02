@@ -229,6 +229,7 @@ five.addEventListener("click", () => {
 document.getElementById("jxgbox").addEventListener("click", click => {
     if (checkChoice(choice) >= 1) {
         if (checkChoice(choice) == 1) {
+
             isLine = []
             perp = []
             para = []
@@ -246,14 +247,32 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                 var pointY = coorY(clickY);
                 allPoint.push(
                     brd.create("point", [pointX, pointY], {
-                        size: 3
+                        fillColor: "#eeeeee",
+                        strokeColor: "#c3d9ff",
+                        highlightFillColor: "#ff0000",
+                        highlightStrokeColor: "#ff0000",
+                        size: 3,
+                        label: {
+                            fixed: false
+                        }
                     })
                 );
+                allPointColor.push(["#eeeeee", "#c3d9ff"])
+                onlyChoice(allPoint, allPointColor)
+                allPoint[allPoint.length - 1].setAttribute({
+                    fillColor: "#ff0000",
+                    strokeColor: "#ff0000"
+                })
             } else if (checkChoice(choiceTool) == 1) {
                 inter = []
                 pointChoice = whichPoint(allPoint);
                 if (mid.length == 0) {
                     if (pointChoice + 1) {
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[pointChoice].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
                         mid.push(allPoint[pointChoice].name);
                     } else {
                         var clickX = click.pageX;
@@ -262,13 +281,31 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                         var pointY = coorY(clickY);
                         allPoint.push(
                             brd.create("point", [pointX, pointY], {
-                                size: 3
+                                fillColor: "#eeeeee",
+                                strokeColor: "#c3d9ff",
+                                highlightFillColor: "#ff0000",
+                                highlightStrokeColor: "#ff0000",
+                                size: 3,
+                                label: {
+                                    fixed: false
+                                }
                             })
                         );
+                        allPointColor.push(["#eeeeee", "#c3d9ff"])
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[allPoint.length - 1].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
                         mid.push(allPoint[allPoint.length - 1].name)
                     }
                 } else {
                     if (pointChoice + 1) {
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[pointChoice].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
                         mid.push(allPoint[pointChoice].name);
                     } else {
                         var clickX = click.pageX;
@@ -277,12 +314,37 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                         var pointY = coorY(clickY);
                         allPoint.push(
                             brd.create("point", [pointX, pointY], {
-                                size: 3
+                                fillColor: "#eeeeee",
+                                strokeColor: "#c3d9ff",
+                                highlightFillColor: "#ff0000",
+                                highlightStrokeColor: "#ff0000",
+                                size: 3,
+                                label: {
+                                    fixed: false
+                                }
                             })
                         );
+                        allPointColor.push(["#eeeeee", "#c3d9ff"])
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[allPoint.length - 1].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
                         mid.push(allPoint[allPoint.length - 1].name)
                     }
-                    allPoint.push(brd.create('midpoint', mid))
+                    allPoint.push(brd.create('midpoint', mid, {
+                        fillColor: "#eeeeee",
+                        strokeColor: "#c3d9ff",
+                        highlightFillColor: "#ff0000",
+                        highlightStrokeColor: "#ff0000",
+                        size: 3
+                    }))
+                    allPointColor.push(["#eeeeee", "#c3d9ff"])
+                    onlyChoice(allPoint, allPointColor)
+                    allPoint[allPoint.length - 1].setAttribute({
+                        fillColor: "#ff0000",
+                        strokeColor: "#ff0000"
+                    })
                     mid = []
                 }
             } else {
@@ -299,16 +361,80 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                     if (lineChoice + 1) {
                         inter.push(allLine[lineChoice]);
                         if (lineKind.includes(inter[0].elType)) {
-                            allPoint.push(brd.create('intersection', inter))
+                            allPoint.push(brd.create('intersection', inter, {
+                                fillColor: "#eeeeee",
+                                strokeColor: "#c3d9ff",
+                                highlightFillColor: "#ff0000",
+                                highlightStrokeColor: "#ff0000",
+                                size: 3,
+                                label: {
+                                    fixed: false
+                                }
+                            }))
+                            allPointColor.push(["#eeeeee", "#c3d9ff"])
+                            onlyChoice(allPoint, allPointColor)
+                            allPoint[allPoint.length - 1].setAttribute({
+                                fillColor: "#ff0000",
+                                strokeColor: "#ff0000"
+                            })
                         } else {
-                            allPoint.push(brd.create('intersection', inter))
-                            allPoint.push(brd.create('intersection', [inter[0], inter[1], 1]))
+                            allPoint.push(brd.create('intersection', inter, {
+                                fillColor: "#eeeeee",
+                                strokeColor: "#c3d9ff",
+                                highlightFillColor: "#ff0000",
+                                highlightStrokeColor: "#ff0000",
+                                size: 3,
+                                label: {
+                                    fixed: false
+                                }
+                            }))
+                            allPointColor.push(["#eeeeee", "#c3d9ff"])
+                            onlyChoice(allPoint, allPointColor)
+                            allPoint[allPoint.length - 1].setAttribute({
+                                fillColor: "#ff0000",
+                                strokeColor: "#ff0000"
+                            })
+                            allPoint.push(brd.create('intersection', [inter[0], inter[1], 1], {
+                                fillColor: "#eeeeee",
+                                strokeColor: "#c3d9ff",
+                                highlightFillColor: "#ff0000",
+                                highlightStrokeColor: "#ff0000",
+                                size: 3,
+                                label: {
+                                    fixed: false
+                                }
+                            }))
+                            allPointColor.push(["#eeeeee", "#c3d9ff"])
+                            allPoint[allPoint.length - 1].setAttribute({
+                                fillColor: "#ff0000",
+                                strokeColor: "#ff0000"
+                            })
                         }
                         inter = []
                     } else if (circChoice + 1) {
                         inter.push(allCirc[circChoice]);
                         allPoint.push(brd.create('intersection', inter))
-                        allPoint.push(brd.create('intersection', [inter[0], inter[1], 1]))
+                        allPointColor.push(["#eeeeee", "#c3d9ff"])
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[allPoint.length - 1].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
+                        allPoint.push(brd.create('intersection', [inter[0], inter[1], 1], {
+                            fillColor: "#eeeeee",
+                            strokeColor: "#c3d9ff",
+                            highlightFillColor: "#ff0000",
+                            highlightStrokeColor: "#ff0000",
+                            size: 3,
+                            label: {
+                                fixed: false
+                            }
+                        }))
+                        allPointColor.push(["#eeeeee", "#c3d9ff"])
+                        allPoint[allPoint.length - 1].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
                         inter = []
                     }
 
@@ -333,6 +459,11 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                 ang = []
                 if (isLine.length == 0) {
                     if (pointChoice + 1) {
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[pointChoice].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
                         isLine.push(allPoint[pointChoice].name);
                     } else {
                         var clickX = click.pageX;
@@ -341,13 +472,31 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                         var pointY = coorY(clickY);
                         allPoint.push(
                             brd.create("point", [pointX, pointY], {
-                                size: 3
+                                fillColor: "#eeeeee",
+                                strokeColor: "#c3d9ff",
+                                highlightFillColor: "#ff0000",
+                                highlightStrokeColor: "#ff0000",
+                                size: 3,
+                                label: {
+                                    fixed: false
+                                }
                             })
                         );
+                        allPointColor.push(["#eeeeee", "#c3d9ff"])
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[allPoint.length - 1].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
                         isLine.push(allPoint[allPoint.length - 1].name)
                     }
                 } else {
                     if (pointChoice + 1) {
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[pointChoice].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
                         isLine.push(allPoint[pointChoice].name);
                     } else {
                         var clickX = click.pageX;
@@ -356,9 +505,22 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                         var pointY = coorY(clickY);
                         allPoint.push(
                             brd.create("point", [pointX, pointY], {
-                                size: 3
+                                fillColor: "#eeeeee",
+                                strokeColor: "#c3d9ff",
+                                highlightFillColor: "#ff0000",
+                                highlightStrokeColor: "#ff0000",
+                                size: 3,
+                                label: {
+                                    fixed: false
+                                }
                             })
                         );
+                        allPointColor.push(["#eeeeee", "#c3d9ff"])
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[allPoint.length - 1].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
                         isLine.push(allPoint[allPoint.length - 1].name)
                     }
                     allLine.push(
@@ -367,6 +529,7 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                             strokeWidth: 1
                         })
                     );
+                    allLineColor.push("#000000")
                     isLine = [];
                 }
             } else if (checkChoice(choiceTool) == 1) {
@@ -378,6 +541,11 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                     if (lineChoice + 1) {
                         perp.push(allLine[lineChoice])
                     } else if (pointChoice + 1) {
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[pointChoice].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
                         perp.push(allPoint[pointChoice])
                     }
                 } else {
@@ -387,14 +555,21 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                             allLine.push(brd.create('perpendicular', perp, {
                                 strokeWidth: 1
                             }))
+                            allLineColor.push("#000000")
                             perp = []
                         }
                     } else if (pointChoice + 1) {
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[pointChoice].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
                         if (lineKind.includes(perp[0].elType)) {
                             perp.push(allPoint[pointChoice])
                             allLine.push(brd.create('perpendicular', perp, {
                                 strokeWidth: 1
                             }))
+                            allLineColor.push("#000000")
                             perp = []
                         }
                     }
@@ -408,6 +583,11 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                     if (lineChoice + 1) {
                         para.push(allLine[lineChoice])
                     } else if (pointChoice + 1) {
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[pointChoice].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
                         para.push(allPoint[pointChoice])
                     }
                 } else {
@@ -417,14 +597,21 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                             allLine.push(brd.create('parallel', para, {
                                 strokeWidth: 1
                             }))
+                            allLineColor.push("#000000")
                             para = []
                         }
                     } else if (pointChoice + 1) {
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[pointChoice].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
                         if (lineKind.includes(para[0].elType)) {
                             para.push(allPoint[pointChoice])
                             allLine.push(brd.create('parallel', para, {
                                 strokeWidth: 1
                             }))
+                            allLineColor.push("#000000")
                             para = []
                         }
                     }
@@ -436,6 +623,11 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                 ang = []
                 if (segment.length == 0) {
                     if (pointChoice + 1) {
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[pointChoice].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
                         segment.push(allPoint[pointChoice].name);
                     } else {
                         var clickX = click.pageX;
@@ -444,13 +636,31 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                         var pointY = coorY(clickY);
                         allPoint.push(
                             brd.create("point", [pointX, pointY], {
-                                size: 3
+                                fillColor: "#eeeeee",
+                                strokeColor: "#c3d9ff",
+                                highlightFillColor: "#ff0000",
+                                highlightStrokeColor: "#ff0000",
+                                size: 3,
+                                label: {
+                                    fixed: false
+                                }
                             })
                         );
+                        allPointColor.push(["#eeeeee", "#c3d9ff"])
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[allPoint[allPoint.length - 1]].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
                         segment.push(allPoint[allPoint.length - 1].name)
                     }
                 } else {
                     if (pointChoice + 1) {
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[pointChoice].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
                         segment.push(allPoint[pointChoice].name);
                     } else {
                         var clickX = click.pageX;
@@ -459,9 +669,22 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                         var pointY = coorY(clickY);
                         allPoint.push(
                             brd.create("point", [pointX, pointY], {
-                                size: 3
+                                fillColor: "#eeeeee",
+                                strokeColor: "#c3d9ff",
+                                highlightFillColor: "#ff0000",
+                                highlightStrokeColor: "#ff0000",
+                                size: 3,
+                                label: {
+                                    fixed: false
+                                }
                             })
                         );
+                        allPointColor.push(["#eeeeee", "#c3d9ff"])
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[allPoint[allPoint.length - 1]].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
                         segment.push(allPoint[allPoint.length - 1].name)
                     }
                     allLine.push(
@@ -470,6 +693,7 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                             strokeWidth: 1
                         })
                     );
+                    allLineColor.push("#000000")
                     segment = [];
                 }
             } else {
@@ -479,6 +703,11 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                 segment = []
                 if (ang.length == 0) {
                     if (pointChoice + 1) {
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[pointChoice].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
                         ang.push(allPoint[pointChoice].name);
                     } else {
                         var clickX = click.pageX;
@@ -487,13 +716,31 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                         var pointY = coorY(clickY);
                         allPoint.push(
                             brd.create("point", [pointX, pointY], {
-                                size: 3
+                                fillColor: "#eeeeee",
+                                strokeColor: "#c3d9ff",
+                                highlightFillColor: "#ff0000",
+                                highlightStrokeColor: "#ff0000",
+                                size: 3,
+                                label: {
+                                    fixed: false
+                                }
                             })
                         );
+                        allPointColor.push(["#eeeeee", "#c3d9ff"])
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[allPoint[allPoint.length - 1]].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
                         ang.push(allPoint[allPoint.length - 1].name)
                     }
                 } else if (ang.length == 1) {
                     if (pointChoice + 1) {
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[pointChoice].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
                         ang.push(allPoint[pointChoice].name);
                     } else {
                         var clickX = click.pageX;
@@ -502,13 +749,31 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                         var pointY = coorY(clickY);
                         allPoint.push(
                             brd.create("point", [pointX, pointY], {
-                                size: 3
+                                fillColor: "#eeeeee",
+                                strokeColor: "#c3d9ff",
+                                highlightFillColor: "#ff0000",
+                                highlightStrokeColor: "#ff0000",
+                                size: 3,
+                                label: {
+                                    fixed: false
+                                }
                             })
                         );
+                        allPointColor.push(["#eeeeee", "#c3d9ff"])
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[allPoint[allPoint.length - 1]].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
                         ang.push(allPoint[allPoint.length - 1].name)
                     }
                 } else {
                     if (pointChoice + 1) {
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[pointChoice].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
                         ang.push(allPoint[pointChoice].name);
                     } else {
                         var clickX = click.pageX;
@@ -517,9 +782,22 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                         var pointY = coorY(clickY);
                         allPoint.push(
                             brd.create("point", [pointX, pointY], {
-                                size: 3
+                                fillColor: "#eeeeee",
+                                strokeColor: "#c3d9ff",
+                                highlightFillColor: "#ff0000",
+                                highlightStrokeColor: "#ff0000",
+                                size: 3,
+                                label: {
+                                    fixed: false
+                                }
                             })
                         );
+                        allPointColor.push(["#eeeeee", "#c3d9ff"])
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[allPoint[allPoint.length - 1]].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
                         ang.push(allPoint[allPoint.length - 1].name)
                     }
                     allLine.push(
@@ -527,6 +805,7 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                             strokeWidth: 1
                         })
                     );
+                    allLineColor.push("#000000")
                     ang = [];
                 }
             }
@@ -544,6 +823,11 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                 incircle = []
                 if (isCirc.length == 0) {
                     if (pointChoice + 1) {
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[pointChoice].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
                         isCirc.push(allPoint[pointChoice].name);
                     } else {
                         var clickX = click.pageX;
@@ -552,13 +836,31 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                         var pointY = coorY(clickY);
                         allPoint.push(
                             brd.create("point", [pointX, pointY], {
-                                size: 3
+                                fillColor: "#eeeeee",
+                                strokeColor: "#c3d9ff",
+                                highlightFillColor: "#ff0000",
+                                highlightStrokeColor: "#ff0000",
+                                size: 3,
+                                label: {
+                                    fixed: false
+                                }
                             })
                         );
+                        allPointColor.push(["#eeeeee", "#c3d9ff"])
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[allPoint[allPoint.length - 1]].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
                         isCirc.push(allPoint[allPoint.length - 1].name)
                     }
                 } else {
                     if (pointChoice + 1) {
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[pointChoice].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
                         isCirc.push(allPoint[pointChoice].name);
                     } else {
                         var clickX = click.pageX;
@@ -567,15 +869,29 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                         var pointY = coorY(clickY);
                         allPoint.push(
                             brd.create("point", [pointX, pointY], {
-                                size: 3
+                                fillColor: "#eeeeee",
+                                strokeColor: "#c3d9ff",
+                                highlightFillColor: "#ff0000",
+                                highlightStrokeColor: "#ff0000",
+                                size: 3,
+                                label: {
+                                    fixed: false
+                                }
                             })
                         );
+                        allPointColor.push(["#eeeeee", "#c3d9ff"])
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[allPoint[allPoint.length - 1]].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
                         isCirc.push(allPoint[allPoint.length - 1].name)
                     }
                     allCirc.push(
                         brd.create("circle", isCirc, {
                             strokeColor: "#000000",
-                            strokeWidth: 2
+                            highlightStrokeWidth: 2,
+                            strokeWidth: 1
                         })
                     );
                     isCirc = [];
@@ -585,14 +901,29 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                 incircle = []
                 if (circum.length == 0) {
                     if (pointChoice + 1) {
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[pointChoice].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
                         circum.push(allPoint[pointChoice]);
                     }
                 } else if (circum.length == 1) {
                     if (pointChoice + 1) {
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[pointChoice].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
                         circum.push(allPoint[pointChoice]);
                     }
                 } else {
                     if (pointChoice + 1) {
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[pointChoice].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
                         circum.push(allPoint[pointChoice]);
                         allCirc.push(brd.create('circumcircle', circum))
                         circum = []
@@ -603,14 +934,29 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                 circum = []
                 if (incircle.length == 0) {
                     if (pointChoice + 1) {
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[pointChoice].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
                         incircle.push(allPoint[pointChoice]);
                     }
                 } else if (incircle.length == 1) {
                     if (pointChoice + 1) {
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[pointChoice].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
                         incircle.push(allPoint[pointChoice]);
                     }
                 } else {
                     if (pointChoice + 1) {
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[pointChoice].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
                         incircle.push(allPoint[pointChoice]);
                         allCirc.push(brd.create('incircle', incircle))
                         incircle = []
@@ -632,6 +978,17 @@ document.getElementById("jxgbox").addEventListener("click", click => {
         pointChoice = whichPoint(allPoint);
         lineChoice = whichLine(allLine);
         circChoice = whichCirc(allCirc);
+
+        if (pointChoice + 1) {
+            onlyChoice(allPoint, allPointColor)
+            allPoint[pointChoice].setAttribute({
+                fillColor: "#ff0000",
+                strokeColor: "#ff0000"
+            })
+        } else {
+            onlyChoice(allPoint, allPointColor)
+        }
+
         if (checkChoice(choiceTool) == 1) {
             if (pointChoice + 1) {
                 allPoint[pointChoice].setAttribute({
@@ -649,75 +1006,74 @@ document.getElementById("jxgbox").addEventListener("click", click => {
         }
 
         // This use to change coor of point
-        if (saveLastPoint.length != 0) {
-            if (pointChoice == saveLastPoint[0]) {
-                fill.value = saveLastPoint[1]
-                fill.disabled = false
-            } else if (pointChoice + 1) {
-                fill.value = ""
-                fill.disabled = false
-            } else {
-                fill.value = ""
-                fill.disabled = true
-            }
+        if (pointChoice + 1) {
+            fill.value = allPointColor[pointChoice][0]
+            fill.disabled = false
         } else {
-            if (pointChoice + 1) {
-                fill.value = ""
-                fill.disabled = false
-            } else if (circChoice + 1) {
-                fill.value = ""
-                fill.disabled = true
-            } else if (lineChoice + 1) {
-                fill.value = ""
-                fill.disabled = true
-            }
+            fill.value = ""
+            fill.disabled = true
         }
 
+        //allPointColor.push(["#eeeeee", "#c3d9ff"])
         fillColor.on("change", color => {
             if (pointChoice + 1) {
                 allPoint[pointChoice].setAttribute({
-                    highlightFillColor: '#' + color
-                });
-                fill.value = "#" + color
-                saveLastPoint.push(pointChoice)
-                saveLastPoint.push(fill.value)
+                    fillColor: "#" + color,
+                    strokeColor: allPointColor[pointChoice][1]
+                })
+                allPointColor[pointChoice][0] = '#' + color
+                fill.value = "#" + color;
             }
         });
 
 
         // This use to change color of stroke
-        if (saveLastPoint2.length == 0) {
+        if (circChoice + 1) {
+            stroke.value = allCircColor[circChoice]
+            stroke.disabled = false
+        } else if (lineChoice + 1 == 0 && pointChoice + 1 == 0) {
             stroke.value = ""
-        } else {
-            stroke.value = saveLastPoint2[0]
+            stroke.disabled = true
+        }
+
+        if (lineChoice + 1) {
+            stroke.value = allLineColor[lineChoice]
+            stroke.disabled = false
+        } else if (pointChoice + 1 == 0 && circChoice + 1 == 0) {
+            stroke.value = ""
+            stroke.disabled = true
+        }
+
+        if (pointChoice + 1) {
+            stroke.value = allPointColor[pointChoice][1]
+            stroke.disabled = false
+        } else if (lineChoice + 1 == 0 && circChoice + 1 == 0) {
+            stroke.value = ""
+            stroke.disabled = true
         }
 
         strokeColor.on("change", color => {
             if (pointChoice + 1) {
                 allPoint[pointChoice].setAttribute({
-                    strokeColor: '#' + color
-                });
+                    fillColor: allPointColor[pointChoice][0],
+                    strokeColor: "#" + color
+                })
+                allPointColor[pointChoice][1] = '#' + color
                 stroke.value = "#" + color
-                saveLastPoint2.push(stroke.value)
             } else if (lineChoice + 1) {
                 allLine[lineChoice].setAttribute({
                     strokeColor: '#' + color
                 });
+                allLineColor[lineChoice] = '#' + color
                 stroke.value = "#" + color
-                saveLastPoint2.push(stroke.value)
             } else if (circChoice + 1) {
                 allCirc[circChoice].setAttribute({
                     strokeColor: '#' + color
                 });
+                allCircColor[circChoice] = '#' + color
                 stroke.value = "#" + color
-                saveLastPoint2.push(stroke.value)
             }
         });
 
-    }
-    for (var i = 0; i < allPoint.length; i++) {
-        allPoint[i].highlighted = true;
-        allPoint[i].needsUpdate = true;
-        allPoint[i].update();
     }
 });

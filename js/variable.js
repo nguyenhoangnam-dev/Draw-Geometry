@@ -9,7 +9,8 @@ var axisY = Math.round((axisX * hei / wid) * 100) / 100;
 
 // This create new coordinate
 var brd = JXG.JSXGraph.initBoard("jxgbox", {
-
+    renderer: 'canvas',
+    axis: false,
     boundingbox: [-axisX, axisY, axisX, -axisY],
     showCopyright: false
 });
@@ -115,5 +116,7 @@ var circum = []
 // This for incircle
 var incircle = []
 
-var saveLastPoint = [];
-var saveLastPoint2 = [];
+// This save color of allpoint
+var allPointColor = []
+var allLineColor = []
+var allCircColor = []

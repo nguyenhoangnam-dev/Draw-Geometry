@@ -1,0 +1,14 @@
+{
+  "name": "demo1",
+  "version": "1.3.0",
+  "description": "This tool use to draw geometry like GSP and Geogebra",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nguyen Hoang Nam",
+  "license": "MIT",
+  "dependencies": {
+    "html2canvas": "^1.0.0-rc.3"
+  }
+}
