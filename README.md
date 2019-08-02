@@ -1,5 +1,5 @@
 # Draw-Geometry (v1.3.0)
-<p align-text="center">
+<p align="center">
     <a href="https://github.com/congviec18120062/Draw-Geometry/issues" alt="GitHub issues">
         <img src="https://img.shields.io/github/issues/congviec18120062/Draw-Geometry" />
     </a>
