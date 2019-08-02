@@ -6,8 +6,10 @@
 [![Version](https://img.shields.io/badge/version-1.3.0-orange)](https://github.com/congviec18120062/Draw-Geometry/blob/master)
 [![Framework](https://img.shields.io/badge/framework-JXSGraph-brightgreen)](https://github.com/congviec18120062/Draw-Geometry/blob/master)
 
-This is similar with GSP and geogebra but open-source
+This is [drawing-app](https://congviec18120062.github.io/Draw-Geometry/) with simple UI|UX. Moreover, my inspiration is GSP and Geogebra which I use during highschool.
+
 ![Euler cirlce](https://raw.githubusercontent.com/congviec18120062/Draw-Geometry/master/img/EulerCircle.jpg)
+This is Euler circle
 
 ## HOW TO
 Just press [this link](https://congviec18120062.github.io/Draw-Geometry/) and enjoy.
