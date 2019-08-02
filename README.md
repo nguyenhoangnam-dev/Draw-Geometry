@@ -28,6 +28,8 @@ This is Feuerbach theorem (Nine point circle tanglent incircle)
 ## HOW TO
 Just press [this link](https://congviec18120062.github.io/Draw-Geometry/) and enjoy. 
 
+![Gif](http://g.recordit.co/UAhYTHf4ty.gif)
+
 ## CUSTOMIZE
 We have 5 main type: Mouse, Point, Line, Circle and Conic with show in top-left
 
