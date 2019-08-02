@@ -337,7 +337,10 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                         strokeColor: "#c3d9ff",
                         highlightFillColor: "#ff0000",
                         highlightStrokeColor: "#ff0000",
-                        size: 3
+                        size: 3,
+                        label: {
+                            fixed: false
+                        }
                     }))
                     allPointColor.push(["#eeeeee", "#c3d9ff"])
                     onlyChoice(allPoint, allPointColor)
