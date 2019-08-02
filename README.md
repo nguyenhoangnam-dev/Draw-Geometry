@@ -1,4 +1,5 @@
 # Draw-Geometry (v1.2.0)
+[![GitHub issues](https://img.shields.io/github/issues/congviec18120062/Draw-Geometry)](https://github.com/congviec18120062/Draw-Geometry/issues)
 This is similar with GSP and geogebra but open-source
 ![Euler cirlce](https://raw.githubusercontent.com/congviec18120062/Draw-Geometry/master/img/EulerCircle.jpg)
 
