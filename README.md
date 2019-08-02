@@ -2,6 +2,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/congviec18120062/Draw-Geometry)](https://github.com/congviec18120062/Draw-Geometry/issues)
 [![GitHub license](https://img.shields.io/github/license/congviec18120062/Draw-Geometry)](https://github.com/congviec18120062/Draw-Geometry/blob/master/LICENSE)
 [![Geometry](https://img.shields.io/badge/geometry-Euclid-blue)](https://github.com/congviec18120062/Draw-Geometry/blob/master)
+[![Version](https://img.shields.io/badge/version-1.3.0-orange)](https://github.com/congviec18120062/Draw-Geometry/blob/master)
 
 This is similar with GSP and geogebra but open-source
 ![Euler cirlce](https://raw.githubusercontent.com/congviec18120062/Draw-Geometry/master/img/EulerCircle.jpg)
