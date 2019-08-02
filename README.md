@@ -1,6 +1,5 @@
 <p align="center">
- <h1>Draw-Geometry</h1>
- <h3>(v1.3.0)</h3>
+ <h1 align="center">Draw-Geometry (v1.3.0)</h1>
 </p>
 <p align="center">
     <a href="https://github.com/congviec18120062/Draw-Geometry/issues" alt="GitHub issues">
