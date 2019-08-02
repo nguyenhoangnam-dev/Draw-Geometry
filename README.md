@@ -8,7 +8,7 @@
 
 This is [drawing-app](https://congviec18120062.github.io/Draw-Geometry/) with simple UI. Moreover, my inspiration is GSP and Geogebra which I use during highschool.
 
-![Feuerbach theorem](https://raw.githubusercontent.com/congviec18120062/Draw-Geometry/master/img/Feuerbach-theorem.jpg)
+![Feuerbach theorem](https://raw.githubusercontent.com/congviec18120062/Draw-Geometry/master/img/Feuerbach%20theorem.jpg)
 This is Feuerbach theorem (Nine point circle tanglent incircle)
 
 ## HOW TO
