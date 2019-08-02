@@ -27,6 +27,7 @@ In top-right we have 4 option:
 * Show: This can show all objct which was eraser or hide.
 * Hide: This is opposite of show.
 
+### Point
 ![Point](https://raw.githubusercontent.com/congviec18120062/Draw-Geometry/master/img/point.jpg)
 
 In top-right we have 4 option: 
@@ -35,6 +36,7 @@ In top-right we have 4 option:
 * Midpoint: Draw midpoint between two points.
 * Intersect: Intersection of two lines.
 
+### Line
 ![Line](https://raw.githubusercontent.com/congviec18120062/Draw-Geometry/master/img/line.jpg)
 
 In top-right we have 4 option: 
@@ -44,6 +46,7 @@ In top-right we have 4 option:
 * Parallel: This is parallel line of one point and one line.
 * Segment: This is segment between two points.
 
+### Circle
 ![Circle](https://raw.githubusercontent.com/congviec18120062/Draw-Geometry/master/img/circle.jpg)
 
 In top-right we have 4 option: 
