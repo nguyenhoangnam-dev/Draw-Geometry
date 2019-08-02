@@ -1,4 +1,7 @@
-# Draw-Geometry (v1.3.0)
+<p align="center">
+ <h1>Draw-Geometry</h1>
+ <h3>(v1.3.0)</h3>
+</p>
 <p align="center">
     <a href="https://github.com/congviec18120062/Draw-Geometry/issues" alt="GitHub issues">
         <img src="https://img.shields.io/github/issues/congviec18120062/Draw-Geometry" />
@@ -16,6 +19,8 @@
         <img src="https://img.shields.io/badge/framework-JSXGraph-brightgreen" />
     </a>
 </p>
+
+# Draw-Geometry
 This is [drawing-app](https://congviec18120062.github.io/Draw-Geometry/) with simple UI. Moreover, my inspiration is GSP and Geogebra which I use during highschool.
 
 ![Feuerbach theorem](https://raw.githubusercontent.com/congviec18120062/Draw-Geometry/master/img/Feuerbach%20theorem.jpg)
