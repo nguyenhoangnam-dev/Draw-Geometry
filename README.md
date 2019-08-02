@@ -1,21 +1,21 @@
 # Draw-Geometry (v1.3.0)
-
-<a href="https://github.com/congviec18120062/Draw-Geometry/issues" alt="GitHub issues">
+<p align-text="center">
+    <a href="https://github.com/congviec18120062/Draw-Geometry/issues" alt="GitHub issues">
         <img src="https://img.shields.io/github/issues/congviec18120062/Draw-Geometry" />
-</a>
-<a href="https://github.com/congviec18120062/Draw-Geometry/blob/master/LICENSE" alt="GitHub license">
+    </a>
+    <a href="https://github.com/congviec18120062/Draw-Geometry/blob/master/LICENSE" alt="GitHub license">
         <img src="https://img.shields.io/github/license/congviec18120062/Draw-Geometry" />
-</a>
-<a href="https://github.com/congviec18120062/Draw-Geometry/blob/master" alt="GitHub license">
+    </a>
+    <a href="https://github.com/congviec18120062/Draw-Geometry/blob/master" alt="GitHub license">
         <img src="https://img.shields.io/badge/geometry-Euclid-blue" />
-</a>
-<a href="https://github.com/congviec18120062/Draw-Geometry/blob/master" alt="GitHub license">
+    </a>
+    <a href="https://github.com/congviec18120062/Draw-Geometry/blob/master" alt="GitHub license">
         <img src="https://img.shields.io/badge/version-1.3.0-orange" />
-</a>
-<a href="https://github.com/congviec18120062/Draw-Geometry/blob/master" alt="GitHub license">
+    </a>
+    <a href="https://github.com/congviec18120062/Draw-Geometry/blob/master" alt="GitHub license">
         <img src="https://img.shields.io/badge/framework-JSXGraph-brightgreen" />
-</a>
-
+    </a>
+</p>
 This is [drawing-app](https://congviec18120062.github.io/Draw-Geometry/) with simple UI. Moreover, my inspiration is GSP and Geogebra which I use during highschool.
 
 ![Feuerbach theorem](https://raw.githubusercontent.com/congviec18120062/Draw-Geometry/master/img/Feuerbach%20theorem.jpg)
