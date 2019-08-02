@@ -1,4 +1,4 @@
-# Draw-Geometry (v1.2.0)
+# Draw-Geometry (v1.3.0)
 
 [![GitHub issues](https://img.shields.io/github/issues/congviec18120062/Draw-Geometry)](https://github.com/congviec18120062/Draw-Geometry/issues)
 [![GitHub license](https://img.shields.io/github/license/congviec18120062/Draw-Geometry)](https://github.com/congviec18120062/Draw-Geometry/blob/master/LICENSE)
