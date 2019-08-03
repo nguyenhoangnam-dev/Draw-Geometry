@@ -120,3 +120,10 @@ var incircle = []
 var allPointColor = []
 var allLineColor = []
 var allCircColor = []
+
+//  This is temporary store intersection point
+var tempInter
+
+// This for screenshot 
+
+var download = document.getElementById("download");

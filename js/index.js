@@ -129,7 +129,7 @@ line.addEventListener("click", () => {
 });
 
 circle.addEventListener("click", () => {
-    if (checkChoice(choice) != 2) {
+    if (checkChoice(choice) != 3) {
         while (moreTool.hasChildNodes()) {
             child = moreTool.firstChild;
             if (child.hasChildNodes()) {
@@ -162,7 +162,7 @@ circle.addEventListener("click", () => {
 });
 
 conic.addEventListener("click", () => {
-    if (checkChoice(choice) != 2) {
+    if (checkChoice(choice) != 4) {
         while (moreTool.hasChildNodes()) {
             child = moreTool.firstChild;
             if (child.hasChildNodes()) {
@@ -226,10 +226,21 @@ five.addEventListener("click", () => {
 
 });
 
+download.addEventListener("click", () => {
+    var canvasScreen = document.getElementsByTagName("canvas");
+    download.href = canvasScreen[0].toDataURL();
+    download.target = "blank";
+    download.download = 'screenshot.png';
+    download.click();
+})
+
 document.getElementById("jxgbox").addEventListener("click", click => {
     if (checkChoice(choice) >= 1) {
+        fill.value = ""
+        fill.disabled = true
+        stroke.value = "";
+        stroke.disabled = true;
         if (checkChoice(choice) == 1) {
-
             isLine = []
             perp = []
             para = []
@@ -397,6 +408,60 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                                 fillColor: "#ff0000",
                                 strokeColor: "#ff0000"
                             })
+
+                            tempInter = brd.create('intersection', [inter[0], inter[1], 1], {
+                                name: "",
+                                visible: false
+                            })
+
+                            if (round2(allPoint[allPoint.length - 1].Dist(tempInter)) == 0) {
+                                delete tempInter;
+                            } else {
+                                allPoint.push(brd.create('intersection', [inter[0], inter[1], 1], {
+                                    fillColor: "#eeeeee",
+                                    strokeColor: "#c3d9ff",
+                                    highlightFillColor: "#ff0000",
+                                    highlightStrokeColor: "#ff0000",
+                                    size: 3,
+                                    label: {
+                                        fixed: false
+                                    }
+                                }))
+                                allPointColor.push(["#eeeeee", "#c3d9ff"])
+                                allPoint[allPoint.length - 1].setAttribute({
+                                    fillColor: "#ff0000",
+                                    strokeColor: "#ff0000"
+                                })
+                            }
+                        }
+                        inter = []
+                    } else if (circChoice + 1) {
+                        inter.push(allCirc[circChoice]);
+                        allPoint.push(brd.create('intersection', inter, {
+                            fillColor: "#eeeeee",
+                            strokeColor: "#c3d9ff",
+                            highlightFillColor: "#ff0000",
+                            highlightStrokeColor: "#ff0000",
+                            size: 3,
+                            label: {
+                                fixed: false
+                            }
+                        }))
+                        allPointColor.push(["#eeeeee", "#c3d9ff"])
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[allPoint.length - 1].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
+
+                        tempInter = brd.create('intersection', [inter[0], inter[1], 1], {
+                            name: "",
+                            visible: false
+                        })
+
+                        if (round2(allPoint[allPoint.length - 1].Dist(tempInter)) == 0) {
+                            delete tempInter;
+                        } else {
                             allPoint.push(brd.create('intersection', [inter[0], inter[1], 1], {
                                 fillColor: "#eeeeee",
                                 strokeColor: "#c3d9ff",
@@ -413,31 +478,6 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                                 strokeColor: "#ff0000"
                             })
                         }
-                        inter = []
-                    } else if (circChoice + 1) {
-                        inter.push(allCirc[circChoice]);
-                        allPoint.push(brd.create('intersection', inter))
-                        allPointColor.push(["#eeeeee", "#c3d9ff"])
-                        onlyChoice(allPoint, allPointColor)
-                        allPoint[allPoint.length - 1].setAttribute({
-                            fillColor: "#ff0000",
-                            strokeColor: "#ff0000"
-                        })
-                        allPoint.push(brd.create('intersection', [inter[0], inter[1], 1], {
-                            fillColor: "#eeeeee",
-                            strokeColor: "#c3d9ff",
-                            highlightFillColor: "#ff0000",
-                            highlightStrokeColor: "#ff0000",
-                            size: 3,
-                            label: {
-                                fixed: false
-                            }
-                        }))
-                        allPointColor.push(["#eeeeee", "#c3d9ff"])
-                        allPoint[allPoint.length - 1].setAttribute({
-                            fillColor: "#ff0000",
-                            strokeColor: "#ff0000"
-                        })
                         inter = []
                     }
 
@@ -897,6 +937,7 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                             strokeWidth: 1
                         })
                     );
+                    allCircColor.push("#000000")
                     isCirc = [];
                 }
             } else if (checkChoice(choiceTool) == 1) {
@@ -928,7 +969,12 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                             strokeColor: "#ff0000"
                         })
                         circum.push(allPoint[pointChoice]);
-                        allCirc.push(brd.create('circumcircle', circum))
+                        allCirc.push(brd.create('circumcircle', circum, {
+                            strokeColor: "#000000",
+                            highlightStrokeWidth: 2,
+                            strokeWidth: 1
+                        }))
+                        allCircColor.push("#000000")
                         circum = []
                     }
                 }
@@ -961,7 +1007,12 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                             strokeColor: "#ff0000"
                         })
                         incircle.push(allPoint[pointChoice]);
-                        allCirc.push(brd.create('incircle', incircle))
+                        allCirc.push(brd.create('incircle', incircle, {
+                            strokeColor: "#000000",
+                            highlightStrokeWidth: 2,
+                            strokeWidth: 1
+                        }))
+                        allCircColor.push("#000000")
                         incircle = []
                     }
                 }
