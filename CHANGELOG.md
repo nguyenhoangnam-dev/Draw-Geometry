@@ -20,7 +20,7 @@ Here we write to make UI more comfortable.
 - [index.js](https://github.com/congviec18120062/Draw-Geometry/blob/master/js/index.js)
   Fix choose none chooseTool
 
-## [1.3.2] - 2019-08-4
+## [1.3.2] - 2019-08-04
 
 Here we would have the update steps for 1.3.2 for some convenient when draw geometry.
 Moreover we can search some features of app.
@@ -44,7 +44,7 @@ Link of web [draw-geometry](https://congviec18120062.github.io/Draw-Geometry/).
 - [index.js](https://github.com/congviec18120062/Draw-Geometry/blob/master/js/index.js)
   When not choose mouse Fill and Stroke can not change.
 
-## [1.3.1] - 2019-08-3
+## [1.3.1] - 2019-08-03
 
 Here we would have the update steps for 1.3.1 for some convenient when draw geometry.
 Moreover we can screenshot for image in type "png".
