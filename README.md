@@ -8,13 +8,13 @@
     <a href="https://github.com/congviec18120062/Draw-Geometry/blob/master/LICENSE" alt="GitHub license">
         <img src="https://img.shields.io/github/license/congviec18120062/Draw-Geometry" />
     </a>
-    <a href="https://github.com/congviec18120062/Draw-Geometry/blob/master" alt="GitHub license">
+    <a href="https://github.com/congviec18120062/Draw-Geometry" alt="Geometry Eulicd">
         <img src="https://img.shields.io/badge/geometry-Euclid-blue" />
     </a>
-    <a href="https://github.com/congviec18120062/Draw-Geometry/blob/master" alt="GitHub license">
-        <img src="https://img.shields.io/badge/version-1.3.0-orange" />
+    <a href="https://github.com/congviec18120062/Draw-Geometry/blob/master/CHANGELOG.md" alt="Version 1.3.2">
+        <img src="https://img.shields.io/badge/version-1.3.2-orange" />
     </a>
-    <a href="https://github.com/congviec18120062/Draw-Geometry/blob/master" alt="GitHub license">
+    <a href="https://github.com/congviec18120062/Draw-Geometry" alt="JSXGraph framework">
         <img src="https://img.shields.io/badge/framework-JSXGraph-brightgreen" />
     </a>
 </p>
