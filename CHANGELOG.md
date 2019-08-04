@@ -4,16 +4,40 @@ Link of web [draw-geometry](https://congviec18120062.github.io/Draw-Geometry/).
 
 ## [Unreleased] - yyyy-mm-dd
 
-Here we write new option record when draw geometry and event when choose line.
+Here we write to make UI more comfortable.
 
 ### Added
 
-- [index.js](https://github.com/congviec18120062/Draw-Geometry/blob/master/js/index.js)
-  Stroke width change when choose and change be sliderbar.
-- [index.js](https://github.com/congviec18120062/Draw-Geometry/blob/master/js/index.js)
-  Record be record.io
+- [index.html](https://github.com/congviec18120062/Draw-Geometry/blob/master/index.html)
+  Add preload to wait app load
 
 ### Changed
+
+### Fixed
+
+- [index.js](https://github.com/congviec18120062/Draw-Geometry/blob/master/js/index.js)
+  Fix change color of stoke input.
+- [index.js](https://github.com/congviec18120062/Draw-Geometry/blob/master/js/index.js)
+  Fix choose none chooseTool
+
+## [1.3.2] - 2019-08-4
+
+Here we would have the update steps for 1.3.2 for some convenient when draw geometry.
+Moreover we can search some features of app.
+
+Link of web [draw-geometry](https://congviec18120062.github.io/Draw-Geometry/).
+
+### Added
+
+- [variable.js](https://github.com/congviec18120062/Draw-Geometry/blob/master/js/variable.js)
+  Add some built-in component geometry.
+- [variable.js](https://github.com/congviec18120062/Draw-Geometry/blob/master/js/variable.js)
+  Add search to listen event.
+
+### Changed
+
+- [index.html](https://github.com/congviec18120062/Draw-Geometry/blob/master/index.html)
+  box-sizing: border-box, class .choice when hover
 
 ### Fixed
 

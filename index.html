@@ -58,12 +58,20 @@
         font-size: 13px;
         height: 50px;
         width: 50px;
+        box-sizing: border-box;
         border: 1px solid black;
         border-radius: 20% 20% 20% 20%;
         margin: 10px;
         text-align: center;
         line-height: 45px;
         background-color: #ffffff;
+      }
+
+      .flex-container > div:hover {
+        border: 3px dashed blue !important;
+        background-color: aquamarine !important;
+        opacity: 0.5;
+        font-weight: bolder;
       }
 
       .other {
@@ -78,6 +86,7 @@
       .square {
         height: 50px;
         width: 50px;
+        box-sizing: border-box;
         border: 1px solid black;
         border-radius: 20% 20% 20% 20%;
         margin: 10px;
@@ -86,12 +95,23 @@
         background-color: #ffffff;
       }
 
+      .square:hover {
+        border: 3px dashed blue !important;
+        background-color: aquamarine !important;
+        opacity: 0.5;
+        font-weight: bolder;
+      }
+
       .choice {
         box-sizing: border-box;
         border: 3px dashed blue !important;
         background-color: aquamarine !important;
         opacity: 0.5;
         font-weight: bolder;
+      }
+
+      #setting {
+        width: 200px;
       }
 
       #setting > div {
@@ -125,11 +145,48 @@
       #download {
         display: block;
         margin-top: 10px;
+        width: 23px;
         color: #000000;
       }
 
       #download:hover {
-        font-size: 25px;
+        font-size: 20px;
+      }
+
+      .slidecontainer > input {
+        width: 145px;
+      }
+
+      .appear {
+        z-index: 1000;
+        position: absolute;
+        list-style-type: none;
+        background-color: #fff;
+        padding-left: 0px;
+        margin-top: 0px;
+      }
+
+      .appear > li {
+        position: relative;
+        box-sizing: border-box;
+        border: 1px solid black;
+        width: 170px;
+        padding-left: 10px;
+      }
+
+      .hide {
+        z-index: -1000 !important;
+      }
+
+      .search-choice {
+        background-color: aquamarine !important;
+      }
+
+      #list > li:hover {
+        border: 3px dashed blue !important;
+        background-color: aquamarine !important;
+        opacity: 0.5;
+        font-weight: bolder;
       }
     </style>
   </head>
@@ -152,16 +209,24 @@
           <label for="strokeColor">Stroke</label>
           <input type="text" id="strokeColor" />
         </div>
+        <div class="slidecontainer">
+          Width:
+          <input type="range" min="1" max="6" value="1" id="range" />
+        </div>
       </div>
       <div class="search">
-        <label for="search">Search</label>
-        <input type="text" id="search" />
+        <div id="users">
+          <input class="search" placeholder="Search" id="search" />
+          <ul class="list appear hide" id="list"></ul>
+        </div>
         <a href="#" id="download"><i class="fas fa-camera"></i></a>
       </div>
       <div id="moreTool" class="other"></div>
     </div>
 
     <div id="jxgbox" class="position jxgbox "></div>
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/js/all.js"></script>
     <script
       type="text/javascript"
