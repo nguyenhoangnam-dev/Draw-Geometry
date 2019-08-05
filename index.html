@@ -30,6 +30,235 @@
         padding: 0;
       }
 
+      #loader-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+      }
+
+      .triangle {
+        display: block;
+        position: relative;
+        left: 40%;
+        top: 40%;
+        z-index: 1001;
+        width: 150px;
+        height: 150px;
+      }
+
+      .triangle1 {
+        clip-path: polygon(50% 0%, 50% 33.33%, 25% 83.33%, 0% 100%);
+        width: 250px;
+        height: 250px;
+        position: absolute;
+        top: 0%;
+        left: 50%;
+
+        background: linear-gradient(219deg, #81e40d, #0a9dc7);
+        background-size: 100% 100%;
+
+        -webkit-animation: AnimationName 0s ease infinite;
+        -moz-animation: AnimationName 0s ease infinite;
+        animation: AnimationName 0s ease infinite;
+
+        @-webkit-keyframes AnimationName {
+          0% {
+            background-position: 92% 0%;
+          }
+          50% {
+            background-position: 9% 100%;
+          }
+          100% {
+            background-position: 92% 0%;
+          }
+        }
+        @-moz-keyframes AnimationName {
+          0% {
+            background-position: 92% 0%;
+          }
+          50% {
+            background-position: 9% 100%;
+          }
+          100% {
+            background-position: 92% 0%;
+          }
+        }
+        @keyframes AnimationName {
+          0% {
+            background-position: 92% 0%;
+          }
+          50% {
+            background-position: 9% 100%;
+          }
+          100% {
+            background-position: 92% 0%;
+          }
+        }
+      }
+
+      .triangle2 {
+        clip-path: polygon(50% 0%, 50% 33.33%, 75% 83.33%, 100% 100%);
+        width: 250px;
+        height: 250px;
+        position: absolute;
+        top: 0%;
+        left: 50%;
+
+        background: linear-gradient(321deg, #ead216, #29e814);
+        background-size: 100% 100%;
+
+        -webkit-animation: AnimationName 0s ease infinite;
+        -moz-animation: AnimationName 0s ease infinite;
+        animation: AnimationName 0s ease infinite;
+
+        @-webkit-keyframes AnimationName {
+          0% {
+            background-position: 7% 0%;
+          }
+          50% {
+            background-position: 94% 100%;
+          }
+          100% {
+            background-position: 7% 0%;
+          }
+        }
+        @-moz-keyframes AnimationName {
+          0% {
+            background-position: 7% 0%;
+          }
+          50% {
+            background-position: 94% 100%;
+          }
+          100% {
+            background-position: 7% 0%;
+          }
+        }
+        @keyframes AnimationName {
+          0% {
+            background-position: 7% 0%;
+          }
+          50% {
+            background-position: 94% 100%;
+          }
+          100% {
+            background-position: 7% 0%;
+          }
+        }
+      }
+
+      .triangle3 {
+        clip-path: polygon(0% 100%, 25% 83.33%, 75% 83.33%, 100% 100%);
+        width: 250px;
+        height: 250px;
+        position: absolute;
+        top: 0%;
+        left: 50%;
+
+        background: linear-gradient(272deg, #ead216, #149ee8);
+        background-size: 100% 100%;
+
+        -webkit-animation: AnimationName 0s ease infinite;
+        -moz-animation: AnimationName 0s ease infinite;
+        animation: AnimationName 0s ease infinite;
+        @-webkit-keyframes AnimationName {
+          0% {
+            background-position: 0% 51%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 51%;
+          }
+        }
+        @-moz-keyframes AnimationName {
+          0% {
+            background-position: 0% 51%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 51%;
+          }
+        }
+        @keyframes AnimationName {
+          0% {
+            background-position: 0% 51%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 51%;
+          }
+        }
+      }
+
+      #loader-wrapper .loader-section {
+        position: fixed;
+        top: 0;
+        width: 51%;
+        height: 100%;
+        background: #222222;
+        z-index: 1000;
+        -webkit-transform: translateX(0); /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: translateX(0); /* IE 9 */
+        transform: translateX(0); /* Firefox 16+, IE 10+, Opera */
+      }
+
+      #loader-wrapper .loader-section.section-left {
+        left: 0;
+      }
+
+      #loader-wrapper .loader-section.section-right {
+        right: 0;
+      }
+
+      /* Loaded */
+      .loaded #loader-wrapper .loader-section.section-left {
+        -webkit-transform: translateX(
+          -100%
+        ); /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: translateX(-100%); /* IE 9 */
+        transform: translateX(-100%); /* Firefox 16+, IE 10+, Opera */
+
+        -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+      }
+
+      .loaded #loader-wrapper .loader-section.section-right {
+        -webkit-transform: translateX(
+          100%
+        ); /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: translateX(100%); /* IE 9 */
+        transform: translateX(100%); /* Firefox 16+, IE 10+, Opera */
+
+        -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+      }
+
+      .loaded .triangle {
+        opacity: 0;
+        -webkit-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out;
+      }
+      .loaded #loader-wrapper {
+        visibility: hidden;
+
+        -webkit-transform: translateY(
+          -100%
+        ); /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: translateY(-100%); /* IE 9 */
+        transform: translateY(-100%); /* Firefox 16+, IE 10+, Opera */
+
+        -webkit-transition: all 0.3s 1s ease-out;
+        transition: all 0.3s 1s ease-out;
+      }
+
       .main-top {
         height: 100px;
         width: 100%;
@@ -192,6 +421,16 @@
   </head>
 
   <body>
+    <div id="loader-wrapper">
+      <div class="triangle">
+        <div class="triangle1"></div>
+        <div class="triangle2"></div>
+        <div class="triangle3"></div>
+      </div>
+
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
     <div class="main-top">
       <div class="option flex-container">
         <div id="mouse" class="choice">Mouse</div>
@@ -225,6 +464,14 @@
     </div>
 
     <div id="jxgbox" class="position jxgbox "></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script>
+      $(document).ready(function() {
+        setTimeout(function() {
+          $("body").addClass("loaded");
+        }, 3000);
+      });
+    </script>
     <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/js/all.js"></script>
