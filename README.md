@@ -79,6 +79,10 @@ In top-right we have 4 option:
 - Circum: This is circumcircle go throught three points.
 - Incircle: This is circle of triangle.
 
+## COMMIT
+
+I hope you follow [this rule](https://gitmoji.carloscuesta.me/) when commit anything new.
+
 ## CONTACT
 
 My email: congviec18120062@gmail.com
