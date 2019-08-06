@@ -11,6 +11,19 @@ clearChoice = choice => {
     }
 };
 
+clearClass = (choice, classes) => {
+    for (var i = 0; i < choice.length; i++) {
+        if (choice[i] != null) {
+            if (
+                choice[i].classList.value.split(" ").filter(value => value == classes)
+                .length != 0
+            ) {
+                choice[i].classList.remove(classes);
+            }
+        }
+    }
+};
+
 addChoice = (choice, eventChoice) => {
     eventChoice.addEventListener("click", () => {
         clearChoice(choice);

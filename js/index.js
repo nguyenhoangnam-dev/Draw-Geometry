@@ -13,6 +13,7 @@ moreTool.appendChild(squareDiv2);
 tex = document.createTextNode("Hide");
 squareDiv3.appendChild(tex);
 moreTool.appendChild(squareDiv3);
+squareDiv4.classList.add("not-choice")
 moreTool.appendChild(squareDiv4);
 
 one = document.getElementById('one')
@@ -38,8 +39,9 @@ mouse.addEventListener("click", () => {
             moreTool.removeChild(moreTool.firstChild);
         }
 
-        clearChoice(choice);
-        clearChoice(choiceTool);
+        clearClass(choice, "choice");
+        clearClass(choiceTool, "choice");
+        clearClass(choiceTool, "not-choice");
         mouse.classList.add("choice");
         tex = document.createTextNode("Normal");
         squareDiv.appendChild(tex);
@@ -54,6 +56,7 @@ mouse.addEventListener("click", () => {
         tex = document.createTextNode("Hide");
         squareDiv3.appendChild(tex);
         moreTool.appendChild(squareDiv3);
+        squareDiv4.classList.add("not-choice")
         moreTool.appendChild(squareDiv4);
     }
 
@@ -105,8 +108,9 @@ point.addEventListener("click", () => {
             moreTool.removeChild(moreTool.firstChild);
         }
 
-        clearChoice(choice);
-        clearChoice(choiceTool);
+        clearClass(choice, "choice");
+        clearClass(choiceTool, "choice");
+        clearClass(choiceTool, "not-choice");
         point.classList.add("choice");
         tex = document.createTextNode("Normal");
         squareDiv.appendChild(tex);
@@ -118,7 +122,9 @@ point.addEventListener("click", () => {
         tex = document.createTextNode("Intersect");
         squareDiv2.appendChild(tex);
         moreTool.appendChild(squareDiv2);
+        squareDiv3.classList.add("not-choice")
         moreTool.appendChild(squareDiv3);
+        squareDiv4.classList.add("not-choice")
         moreTool.appendChild(squareDiv4);
     }
     one = document.getElementById('one')
@@ -143,8 +149,9 @@ line.addEventListener("click", () => {
             moreTool.removeChild(moreTool.firstChild);
         }
 
-        clearChoice(choice);
-        clearChoice(choiceTool);
+        clearClass(choice, "choice");
+        clearClass(choiceTool, "choice");
+        clearClass(choiceTool, "not-choice");
         line.classList.add("choice");
         tex = document.createTextNode("Normal");
         squareDiv.appendChild(tex);
@@ -185,8 +192,9 @@ circle.addEventListener("click", () => {
             moreTool.removeChild(moreTool.firstChild);
         }
 
-        clearChoice(choice);
-        clearChoice(choiceTool);
+        clearClass(choice, "choice");
+        clearClass(choiceTool, "choice");
+        clearClass(choiceTool, "not-choice");
         circle.classList.add("choice");
         tex = document.createTextNode("Normal");
         squareDiv.appendChild(tex);
@@ -198,7 +206,9 @@ circle.addEventListener("click", () => {
         tex = document.createTextNode("Incircle");
         squareDiv2.appendChild(tex);
         moreTool.appendChild(squareDiv2);
+        squareDiv3.classList.add("not-choice")
         moreTool.appendChild(squareDiv3);
+        squareDiv4.classList.add("not-choice")
         moreTool.appendChild(squareDiv4);
     }
     one = document.getElementById('one')
@@ -223,16 +233,20 @@ conic.addEventListener("click", () => {
             moreTool.removeChild(moreTool.firstChild);
         }
 
-        clearChoice(choice);
-        clearChoice(choiceTool);
+        clearClass(choice, "choice");
+        clearClass(choiceTool, "choice");
+        clearClass(choiceTool, "not-choice");
         conic.classList.add("choice");
         tex = document.createTextNode("Normal");
         squareDiv.appendChild(tex);
         squareDiv.classList.add("choice");
         moreTool.appendChild(squareDiv);
         moreTool.appendChild(squareDiv1);
+        squareDiv2.classList.add("not-choice")
         moreTool.appendChild(squareDiv2);
+        squareDiv3.classList.add("not-choice")
         moreTool.appendChild(squareDiv3);
+        squareDiv4.classList.add("not-choice")
         moreTool.appendChild(squareDiv4);
     }
     one = document.getElementById('one')
@@ -251,28 +265,33 @@ conic.addEventListener("click", () => {
 
 one.addEventListener("click", () => {
     clearChoice(choiceTool);
-    one.classList.add("choice");
-
+    if (one.classList.length != 2) {
+        one.classList.add("choice");
+    }
 });
 
 two.addEventListener("click", () => {
     clearChoice(choiceTool);
-    two.classList.add("choice");
-
+    if (two.classList.length != 2) {
+        two.classList.add("choice");
+    }
 });
 
 three.addEventListener("click", () => {
     clearChoice(choiceTool);
-    three.classList.add("choice");
+    if (three.classList.length != 2) {
+        three.classList.add("choice");
+    }
     if (checkChoice(choice) == 0) {
         allVisible(allPoint, allLine, allCirc)
     }
-
 });
 
 four.addEventListener("click", () => {
     clearChoice(choiceTool);
-    four.classList.add("choice");
+    if (four.classList.length != 2) {
+        four.classList.add("choice");
+    }
     if (checkChoice(choice) == 0) {
         allInvisible(allPoint, allLine, allCirc)
     }
@@ -280,8 +299,9 @@ four.addEventListener("click", () => {
 
 five.addEventListener("click", () => {
     clearChoice(choiceTool);
-    five.classList.add("choice");
-
+    if (five.classList.length != 2) {
+        five.classList.add("choice");
+    }
 });
 
 download.addEventListener("click", () => {
@@ -643,7 +663,7 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                         })
                     );
                     allLineColor.push("#000000")
-                    allLineWidth.oush(1)
+                    allLineWidth.push(1)
                     isLine = [];
                 }
             } else if (checkChoice(choiceTool) == 1) {
