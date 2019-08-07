@@ -76,7 +76,16 @@ whichCirc = allCirc => {
     return -1;
 };
 
-allVisible = (allPoint, allLine, allCirc) => {
+whichText = allText => {
+    for (var i = 0; i < allText.length; i++) {
+        if (allText[i].mouseover) {
+            return i;
+        }
+    }
+    return -1;
+};
+
+allVisible = (allPoint, allLine, allCirc, allText) => {
     for (var i = 0; i < allPoint.length; i++) {
         allPoint[i].setAttribute({
             visible: true
@@ -89,12 +98,17 @@ allVisible = (allPoint, allLine, allCirc) => {
     }
     for (var i = 0; i < allCirc.length; i++) {
         allCirc[i].setAttribute({
+            visible: true
+        });
+    }
+    for (var i = 0; i < allText.length; i++) {
+        allText[i].setAttribute({
             visible: true
         });
     }
 };
 
-allInvisible = (allPoint, allLine, allCirc) => {
+allInvisible = (allPoint, allLine, allCirc, allText) => {
     for (var i = 0; i < allPoint.length; i++) {
         allPoint[i].setAttribute({
             visible: false
@@ -107,6 +121,11 @@ allInvisible = (allPoint, allLine, allCirc) => {
     }
     for (var i = 0; i < allCirc.length; i++) {
         allCirc[i].setAttribute({
+            visible: false
+        });
+    }
+    for (var i = 0; i < allText.length; i++) {
+        allText[i].setAttribute({
             visible: false
         });
     }
@@ -122,3 +141,15 @@ onlyChoice = (allPoint, allPointColor) => {
 };
 
 round2 = (x) => Math.round(x * 100) / 100
+
+checkConc = (allPoint, tempInter) => {
+    var k = 0,
+        i = 0;
+    while (k == 0 && i < allPoint.length) {
+        if (round2(allPoint[i].Dist(tempInter)) == 0) {
+            k = 1
+        }
+        i++
+    }
+    return k
+}

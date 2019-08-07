@@ -1,7 +1,10 @@
 // This is all variable in project
+// This is jxgbox id
+var box = document.getElementById("jxgbox")
+
 // This is width, height of jxgbox
-const wid = document.getElementById("jxgbox").offsetWidth;
-const hei = document.getElementById("jxgbox").offsetHeight;
+const wid = box.offsetWidth;
+const hei = box.offsetHeight;
 
 // This is unit of coordinate
 var axisX = 8;
@@ -47,6 +50,12 @@ var allCirc = [];
 // This show this point in circle
 var isCirc = [];
 
+// This store all text
+var allText = []
+
+// This for text
+var newText = [];
+
 // This is where to show more tool
 var moreTool = document.getElementById("moreTool");
 
@@ -71,11 +80,16 @@ var squareDiv4 = document.createElement('div');
 squareDiv4.id = 'five';
 squareDiv4.className = 'square';
 
+var squareDiv5 = document.createElement('div');
+squareDiv5.id = 'six';
+squareDiv5.className = 'square';
+
 moreTool.appendChild(squareDiv);
 moreTool.appendChild(squareDiv1);
 moreTool.appendChild(squareDiv2);
 moreTool.appendChild(squareDiv3);
 moreTool.appendChild(squareDiv4);
+moreTool.appendChild(squareDiv5);
 
 var tex;
 var one = document.getElementById('one')
@@ -83,9 +97,10 @@ var two = document.getElementById('two')
 var three = document.getElementById('three')
 var four = document.getElementById('four')
 var five = document.getElementById('five')
+var six = document.getElementById('six')
 
 // This is all more tool choice
-var choiceTool = [one, two, three, four, five];
+var choiceTool = [one, two, three, four, five, six];
 
 // This for midpoint 
 var mid = [];
@@ -98,7 +113,7 @@ var perp = []
 
 // This all kind of line, point
 var pointKind = ["point", "intersection", "midpoint"]
-var lineKind = ["line", "perpendicular", "parallel", "segment"]
+var lineKind = ["line", "perpendicular", "parallel", "segment", "bisector"]
 var circleKind = ["circle", "circumcircle", "incircle"]
 
 // This for parallel

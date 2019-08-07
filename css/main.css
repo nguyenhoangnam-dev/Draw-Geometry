@@ -38,50 +38,50 @@ body {
     background: linear-gradient(219deg, #81e40d, #0a9dc7);
     background-size: 100% 100%;
 
-    -webkit-animation: AnimationName 1s ease infinite;
-    -moz-animation: AnimationName 1s ease infinite;
-    animation: AnimationName 1s ease infinite;
+    -webkit-animation: AnimationName1 1s ease infinite;
+    -moz-animation: AnimationName1 1s ease infinite;
+    animation: AnimationName1 1s ease infinite;
+}
 
-    @-webkit-keyframes AnimationName {
-        0% {
-            background-position: 92% 0%;
-        }
-
-        50% {
-            background-position: 9% 100%;
-        }
-
-        100% {
-            background-position: 92% 0%;
-        }
+@-webkit-keyframes AnimationName {
+    0% {
+        background-position: 92% 0%;
     }
 
-    @-moz-keyframes AnimationName {
-        0% {
-            background-position: 92% 0%;
-        }
-
-        50% {
-            background-position: 9% 100%;
-        }
-
-        100% {
-            background-position: 92% 0%;
-        }
+    50% {
+        background-position: 9% 100%;
     }
 
-    @keyframes AnimationName {
-        0% {
-            background-position: 92% 0%;
-        }
+    100% {
+        background-position: 92% 0%;
+    }
+}
 
-        50% {
-            background-position: 9% 100%;
-        }
+@-moz-keyframes AnimationName {
+    0% {
+        background-position: 92% 0%;
+    }
 
-        100% {
-            background-position: 92% 0%;
-        }
+    50% {
+        background-position: 9% 100%;
+    }
+
+    100% {
+        background-position: 92% 0%;
+    }
+}
+
+@keyframes AnimationName {
+    0% {
+        background-position: 92% 0%;
+    }
+
+    50% {
+        background-position: 9% 100%;
+    }
+
+    100% {
+        background-position: 92% 0%;
     }
 }
 
@@ -96,50 +96,50 @@ body {
     background: linear-gradient(321deg, #ead216, #29e814);
     background-size: 100% 100%;
 
-    -webkit-animation: AnimationName 0s ease infinite;
-    -moz-animation: AnimationName 0s ease infinite;
-    animation: AnimationName 0s ease infinite;
+    -webkit-animation: AnimationName2 0s ease infinite;
+    -moz-animation: AnimationName2 0s ease infinite;
+    animation: AnimationName2 0s ease infinite;
+}
 
-    @-webkit-keyframes AnimationName {
-        0% {
-            background-position: 7% 0%;
-        }
-
-        50% {
-            background-position: 94% 100%;
-        }
-
-        100% {
-            background-position: 7% 0%;
-        }
+@-webkit-keyframes AnimationName2 {
+    0% {
+        background-position: 7% 0%;
     }
 
-    @-moz-keyframes AnimationName {
-        0% {
-            background-position: 7% 0%;
-        }
-
-        50% {
-            background-position: 94% 100%;
-        }
-
-        100% {
-            background-position: 7% 0%;
-        }
+    50% {
+        background-position: 94% 100%;
     }
 
-    @keyframes AnimationName {
-        0% {
-            background-position: 7% 0%;
-        }
+    100% {
+        background-position: 7% 0%;
+    }
+}
 
-        50% {
-            background-position: 94% 100%;
-        }
+@-moz-keyframes AnimationName2 {
+    0% {
+        background-position: 7% 0%;
+    }
 
-        100% {
-            background-position: 7% 0%;
-        }
+    50% {
+        background-position: 94% 100%;
+    }
+
+    100% {
+        background-position: 7% 0%;
+    }
+}
+
+@keyframes AnimationName2 {
+    0% {
+        background-position: 7% 0%;
+    }
+
+    50% {
+        background-position: 94% 100%;
+    }
+
+    100% {
+        background-position: 7% 0%;
     }
 }
 
@@ -154,50 +154,50 @@ body {
     background: linear-gradient(272deg, #ead216, #149ee8);
     background-size: 100% 100%;
 
-    -webkit-animation: AnimationName 0s ease infinite;
-    -moz-animation: AnimationName 0s ease infinite;
-    animation: AnimationName 0s ease infinite;
+    -webkit-animation: AnimationName3 0s ease infinite;
+    -moz-animation: AnimationName3 0s ease infinite;
+    animation: AnimationName3 0s ease infinite;
+}
 
-    @-webkit-keyframes AnimationName {
-        0% {
-            background-position: 0% 51%;
-        }
-
-        50% {
-            background-position: 100% 50%;
-        }
-
-        100% {
-            background-position: 0% 51%;
-        }
+@-webkit-keyframes AnimationName3 {
+    0% {
+        background-position: 0% 51%;
     }
 
-    @-moz-keyframes AnimationName {
-        0% {
-            background-position: 0% 51%;
-        }
-
-        50% {
-            background-position: 100% 50%;
-        }
-
-        100% {
-            background-position: 0% 51%;
-        }
+    50% {
+        background-position: 100% 50%;
     }
 
-    @keyframes AnimationName {
-        0% {
-            background-position: 0% 51%;
-        }
+    100% {
+        background-position: 0% 51%;
+    }
+}
 
-        50% {
-            background-position: 100% 50%;
-        }
+@-moz-keyframes AnimationName3 {
+    0% {
+        background-position: 0% 51%;
+    }
 
-        100% {
-            background-position: 0% 51%;
-        }
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 51%;
+    }
+}
+
+@keyframes AnimationName3 {
+    0% {
+        background-position: 0% 51%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 51%;
     }
 }
 

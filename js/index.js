@@ -1,3 +1,5 @@
+//MicroModal.init();
+
 // This use for default choice
 
 tex = document.createTextNode("Normal");
@@ -13,8 +15,12 @@ moreTool.appendChild(squareDiv2);
 tex = document.createTextNode("Hide");
 squareDiv3.appendChild(tex);
 moreTool.appendChild(squareDiv3);
-squareDiv4.classList.add("not-choice")
+tex = document.createTextNode("Text");
+squareDiv4.appendChild(tex);
 moreTool.appendChild(squareDiv4);
+tex = document.createTextNode("Label");
+squareDiv5.appendChild(tex);
+moreTool.appendChild(squareDiv5);
 
 one = document.getElementById('one')
 two = document.getElementById('two')
@@ -56,8 +62,12 @@ mouse.addEventListener("click", () => {
         tex = document.createTextNode("Hide");
         squareDiv3.appendChild(tex);
         moreTool.appendChild(squareDiv3);
-        squareDiv4.classList.add("not-choice")
+        tex = document.createTextNode("Text");
+        squareDiv4.appendChild(tex);
         moreTool.appendChild(squareDiv4);
+        tex = document.createTextNode("More");
+        squareDiv5.appendChild(tex);
+        moreTool.appendChild(squareDiv5);
     }
 
     one = document.getElementById('one')
@@ -65,6 +75,7 @@ mouse.addEventListener("click", () => {
     three = document.getElementById('three')
     four = document.getElementById('four')
     five = document.getElementById('five')
+    six = document.getElementById('six')
 });
 
 search.value = ""
@@ -126,12 +137,15 @@ point.addEventListener("click", () => {
         moreTool.appendChild(squareDiv3);
         squareDiv4.classList.add("not-choice")
         moreTool.appendChild(squareDiv4);
+        squareDiv5.classList.add("not-choice")
+        moreTool.appendChild(squareDiv5);
     }
     one = document.getElementById('one')
     two = document.getElementById('two')
     three = document.getElementById('three')
     four = document.getElementById('four')
     five = document.getElementById('five')
+    six = document.getElementById('six')
 
     fill.value = ""
     fill.disabled = true
@@ -169,12 +183,16 @@ line.addEventListener("click", () => {
         tex = document.createTextNode("Angle");
         squareDiv4.appendChild(tex);
         moreTool.appendChild(squareDiv4);
+        tex = document.createTextNode("Tangent");
+        squareDiv5.appendChild(tex);
+        moreTool.appendChild(squareDiv5);
     }
     one = document.getElementById('one')
     two = document.getElementById('two')
     three = document.getElementById('three')
     four = document.getElementById('four')
     five = document.getElementById('five')
+    six = document.getElementById('six')
 
     fill.value = ""
     fill.disabled = true
@@ -210,12 +228,15 @@ circle.addEventListener("click", () => {
         moreTool.appendChild(squareDiv3);
         squareDiv4.classList.add("not-choice")
         moreTool.appendChild(squareDiv4);
+        squareDiv5.classList.add("not-choice")
+        moreTool.appendChild(squareDiv5);
     }
     one = document.getElementById('one')
     two = document.getElementById('two')
     three = document.getElementById('three')
     four = document.getElementById('four')
     five = document.getElementById('five')
+    six = document.getElementById('six')
 
     fill.value = ""
     fill.disabled = true
@@ -241,19 +262,27 @@ conic.addEventListener("click", () => {
         squareDiv.appendChild(tex);
         squareDiv.classList.add("choice");
         moreTool.appendChild(squareDiv);
+        tex = document.createTextNode("Ellipse");
+        squareDiv1.appendChild(tex);
         moreTool.appendChild(squareDiv1);
-        squareDiv2.classList.add("not-choice")
+        tex = document.createTextNode("Parabola");
+        squareDiv2.appendChild(tex);
         moreTool.appendChild(squareDiv2);
-        squareDiv3.classList.add("not-choice")
+        tex = document.createTextNode("Hyperbola");
+        squareDiv3.appendChild(tex);
         moreTool.appendChild(squareDiv3);
-        squareDiv4.classList.add("not-choice")
+        tex = document.createTextNode("Conic");
+        squareDiv4.appendChild(tex);
         moreTool.appendChild(squareDiv4);
+        squareDiv5.classList.add("not-choice")
+        moreTool.appendChild(squareDiv5);
     }
     one = document.getElementById('one')
     two = document.getElementById('two')
     three = document.getElementById('three')
     four = document.getElementById('four')
     five = document.getElementById('five')
+    six = document.getElementById('six')
 
     fill.value = ""
     fill.disabled = true
@@ -283,7 +312,7 @@ three.addEventListener("click", () => {
         three.classList.add("choice");
     }
     if (checkChoice(choice) == 0) {
-        allVisible(allPoint, allLine, allCirc)
+        allVisible(allPoint, allLine, allCirc, allText)
     }
 });
 
@@ -293,7 +322,7 @@ four.addEventListener("click", () => {
         four.classList.add("choice");
     }
     if (checkChoice(choice) == 0) {
-        allInvisible(allPoint, allLine, allCirc)
+        allInvisible(allPoint, allLine, allCirc, allText)
     }
 });
 
@@ -301,6 +330,13 @@ five.addEventListener("click", () => {
     clearChoice(choiceTool);
     if (five.classList.length != 2) {
         five.classList.add("choice");
+    }
+});
+
+six.addEventListener("click", () => {
+    clearChoice(choiceTool);
+    if (six.classList.length != 2) {
+        six.classList.add("choice");
     }
 });
 
@@ -332,29 +368,81 @@ document.getElementById("jxgbox").addEventListener("click", click => {
             if (checkChoice(choiceTool) == 0) {
                 mid = []
                 inter = []
-                var clickX = click.pageX;
-                var clickY = click.pageY;
-                var pointX = coorX(clickX);
-                var pointY = coorY(clickY);
-                allPoint.push(
-                    brd.create("point", [pointX, pointY], {
-                        fillColor: "#eeeeee",
-                        strokeColor: "#c3d9ff",
-                        strokeWidth: 1,
-                        highlightFillColor: "#ff0000",
-                        highlightStrokeColor: "#ff0000",
-                        size: 3,
-                        label: {
-                            fixed: false
-                        }
+                lineChoice = whichLine(allLine);
+                circChoice = whichCirc(allCirc);
+                if (lineChoice + 1) {
+                    var clickX = click.pageX;
+                    var clickY = click.pageY;
+                    var pointX = coorX(clickX);
+                    var pointY = coorY(clickY);
+                    allPoint.push(
+                        brd.create("glider", [pointX, pointY, allLine[lineChoice]], {
+                            fillColor: "#eeeeee",
+                            strokeColor: "#c3d9ff",
+                            strokeWidth: 1,
+                            highlightFillColor: "#ff0000",
+                            highlightStrokeColor: "#ff0000",
+                            size: 3,
+                            label: {
+                                fixed: false
+                            }
+                        })
+                    );
+                    allPointColor.push(["#eeeeee", "#c3d9ff", 1])
+                    onlyChoice(allPoint, allPointColor)
+                    allPoint[allPoint.length - 1].setAttribute({
+                        fillColor: "#ff0000",
+                        strokeColor: "#ff0000"
                     })
-                );
-                allPointColor.push(["#eeeeee", "#c3d9ff", 1])
-                onlyChoice(allPoint, allPointColor)
-                allPoint[allPoint.length - 1].setAttribute({
-                    fillColor: "#ff0000",
-                    strokeColor: "#ff0000"
-                })
+                } else if (circChoice + 1) {
+                    var clickX = click.pageX;
+                    var clickY = click.pageY;
+                    var pointX = coorX(clickX);
+                    var pointY = coorY(clickY);
+                    allPoint.push(
+                        brd.create("glider", [pointX, pointY, allCirc[circChoice]], {
+                            fillColor: "#eeeeee",
+                            strokeColor: "#c3d9ff",
+                            strokeWidth: 1,
+                            highlightFillColor: "#ff0000",
+                            highlightStrokeColor: "#ff0000",
+                            size: 3,
+                            label: {
+                                fixed: false
+                            }
+                        })
+                    );
+                    allPointColor.push(["#eeeeee", "#c3d9ff", 1])
+                    onlyChoice(allPoint, allPointColor)
+                    allPoint[allPoint.length - 1].setAttribute({
+                        fillColor: "#ff0000",
+                        strokeColor: "#ff0000"
+                    })
+                } else {
+                    var clickX = click.pageX;
+                    var clickY = click.pageY;
+                    var pointX = coorX(clickX);
+                    var pointY = coorY(clickY);
+                    allPoint.push(
+                        brd.create("point", [pointX, pointY], {
+                            fillColor: "#eeeeee",
+                            strokeColor: "#c3d9ff",
+                            strokeWidth: 1,
+                            highlightFillColor: "#ff0000",
+                            highlightStrokeColor: "#ff0000",
+                            size: 3,
+                            label: {
+                                fixed: false
+                            }
+                        })
+                    );
+                    allPointColor.push(["#eeeeee", "#c3d9ff", 1])
+                    onlyChoice(allPoint, allPointColor)
+                    allPoint[allPoint.length - 1].setAttribute({
+                        fillColor: "#ff0000",
+                        strokeColor: "#ff0000"
+                    })
+                }
             } else if (checkChoice(choiceTool) == 1) {
                 inter = []
                 pointChoice = whichPoint(allPoint);
@@ -476,30 +564,39 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                                 strokeColor: "#ff0000"
                             })
                         } else {
-                            allPoint.push(brd.create('intersection', inter, {
-                                fillColor: "#eeeeee",
-                                strokeColor: "#c3d9ff",
-                                strokeWidth: 1,
-                                highlightFillColor: "#ff0000",
-                                highlightStrokeColor: "#ff0000",
-                                size: 3,
-                                label: {
-                                    fixed: false
-                                }
-                            }))
-                            allPointColor.push(["#eeeeee", "#c3d9ff", 1])
-                            onlyChoice(allPoint, allPointColor)
-                            allPoint[allPoint.length - 1].setAttribute({
-                                fillColor: "#ff0000",
-                                strokeColor: "#ff0000"
+
+                            tempInter = brd.create('intersection', inter, {
+                                name: "",
+                                visible: false
                             })
+                            if (checkConc(allPoint, tempInter)) {
+                                delete tempInter;
+                            } else {
+                                allPoint.push(brd.create('intersection', inter, {
+                                    fillColor: "#eeeeee",
+                                    strokeColor: "#c3d9ff",
+                                    strokeWidth: 1,
+                                    highlightFillColor: "#ff0000",
+                                    highlightStrokeColor: "#ff0000",
+                                    size: 3,
+                                    label: {
+                                        fixed: false
+                                    }
+                                }))
+                                allPointColor.push(["#eeeeee", "#c3d9ff", 1])
+                                onlyChoice(allPoint, allPointColor)
+                                allPoint[allPoint.length - 1].setAttribute({
+                                    fillColor: "#ff0000",
+                                    strokeColor: "#ff0000"
+                                })
+                            }
 
                             tempInter = brd.create('intersection', [inter[0], inter[1], 1], {
                                 name: "",
                                 visible: false
                             })
 
-                            if (round2(allPoint[allPoint.length - 1].Dist(tempInter)) == 0) {
+                            if (checkConc(allPoint, tempInter)) {
                                 delete tempInter;
                             } else {
                                 allPoint.push(brd.create('intersection', [inter[0], inter[1], 1], {
@@ -523,30 +620,39 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                         inter = []
                     } else if (circChoice + 1) {
                         inter.push(allCirc[circChoice]);
-                        allPoint.push(brd.create('intersection', inter, {
-                            fillColor: "#eeeeee",
-                            strokeColor: "#c3d9ff",
-                            strokeWidth: 1,
-                            highlightFillColor: "#ff0000",
-                            highlightStrokeColor: "#ff0000",
-                            size: 3,
-                            label: {
-                                fixed: false
-                            }
-                        }))
-                        allPointColor.push(["#eeeeee", "#c3d9ff", 1])
-                        onlyChoice(allPoint, allPointColor)
-                        allPoint[allPoint.length - 1].setAttribute({
-                            fillColor: "#ff0000",
-                            strokeColor: "#ff0000"
+
+                        tempInter = brd.create('intersection', inter, {
+                            name: "",
+                            visible: false
                         })
+                        if (checkConc(allPoint, tempInter)) {
+                            delete tempInter;
+                        } else {
+                            allPoint.push(brd.create('intersection', inter, {
+                                fillColor: "#eeeeee",
+                                strokeColor: "#c3d9ff",
+                                strokeWidth: 1,
+                                highlightFillColor: "#ff0000",
+                                highlightStrokeColor: "#ff0000",
+                                size: 3,
+                                label: {
+                                    fixed: false
+                                }
+                            }))
+                            allPointColor.push(["#eeeeee", "#c3d9ff", 1])
+                            onlyChoice(allPoint, allPointColor)
+                            allPoint[allPoint.length - 1].setAttribute({
+                                fillColor: "#ff0000",
+                                strokeColor: "#ff0000"
+                            })
+                        }
 
                         tempInter = brd.create('intersection', [inter[0], inter[1], 1], {
                             name: "",
                             visible: false
                         })
 
-                        if (round2(allPoint[allPoint.length - 1].Dist(tempInter)) == 0) {
+                        if (checkConc(allPoint, tempInter)) {
                             delete tempInter;
                         } else {
                             allPoint.push(brd.create('intersection', [inter[0], inter[1], 1], {
@@ -994,7 +1100,7 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                         );
                         allPointColor.push(["#eeeeee", "#c3d9ff", 1])
                         onlyChoice(allPoint, allPointColor)
-                        allPoint[allPoint[allPoint.length - 1]].setAttribute({
+                        allPoint[allPoint.length - 1].setAttribute({
                             fillColor: "#ff0000",
                             strokeColor: "#ff0000"
                         })
@@ -1028,7 +1134,7 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                         );
                         allPointColor.push(["#eeeeee", "#c3d9ff", 1])
                         onlyChoice(allPoint, allPointColor)
-                        allPoint[allPoint[allPoint.length - 1]].setAttribute({
+                        allPoint[allPoint.length - 1].setAttribute({
                             fillColor: "#ff0000",
                             strokeColor: "#ff0000"
                         })
@@ -1139,6 +1245,7 @@ document.getElementById("jxgbox").addEventListener("click", click => {
         pointChoice = whichPoint(allPoint);
         lineChoice = whichLine(allLine);
         circChoice = whichCirc(allCirc);
+        textChoice = whichText(allText);
 
         if (pointChoice + 1) {
             onlyChoice(allPoint, allPointColor)
@@ -1163,6 +1270,107 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                 allCirc[circChoice].setAttribute({
                     visible: false
                 });
+            } else if (textChoice + 1) {
+                allText[textChoice].setAttribute({
+                    visible: false
+                })
+            }
+        } else if (checkChoice(choiceTool) == 4) {
+            var clickX = click.pageX;
+            var clickY = click.pageY;
+            var pointX = coorX(clickX);
+            var pointY = coorY(clickY);
+            vex.dialog.open({
+                message: 'Type your text or latex',
+                input: [
+                    '<style>',
+                    '.vex-custom-field-wrapper {',
+                    'margin: 1em 0;',
+                    '}',
+                    '.vex-custom-field-wrapper > label {',
+                    'display: inline-block;',
+                    'margin-bottom: .2em;',
+                    '}',
+                    '</style>',
+                    '<div class="vex-custom-field-wrapper">',
+                    '<label for="font-size">Font size</label>',
+                    '<div class="vex-custom-input-wrapper">',
+                    '<input name="font_size" type="number" id="font-size" value="18" min="12 max="40"/>',
+                    '</div>',
+                    '</div>',
+                    '<label for="tex">Tex</label>',
+                    '<textarea name="tex" rows="4" cols="50"></textarea>'
+                ].join(''),
+                buttons: [
+                    $.extend({}, vex.dialog.buttons.YES, {
+                        text: 'Done'
+                    }),
+                    $.extend({}, vex.dialog.buttons.NO, {
+                        text: 'Back'
+                    })
+                ],
+                callback: function (data) {
+                    if (data) {
+                        var a = data.tex.split("");
+                        for (var i = 0; i < a.length; i++) {
+                            if (a[i] == "\\") {
+                                a[i] = "\\\\";
+                            }
+                        }
+                        a = a.join("")
+                        allText.push(brd.create('text', [pointX, pointY, a], {
+                            fontSize: data.font_size,
+                            useMathJax: true
+                        }))
+                    }
+                }
+            })
+        } else if (checkChoice(choiceTool) == 0) {
+            if (textChoice + 1) {
+                vex.dialog.open({
+                    message: 'Type your text or latex',
+                    input: [
+                        '<style>',
+                        '.vex-custom-field-wrapper {',
+                        'margin: 1em 0;',
+                        '}',
+                        '.vex-custom-field-wrapper > label {',
+                        'display: inline-block;',
+                        'margin-bottom: .2em;',
+                        '}',
+                        '</style>',
+                        '<div class="vex-custom-field-wrapper">',
+                        '<label for="font-size">Font size</label>',
+                        '<div class="vex-custom-input-wrapper">',
+                        '<input name="font_size" type="number" id="font-size" value="18" min="12 max="40"/>',
+                        '</div>',
+                        '</div>',
+                        '<label for="tex">Tex</label>',
+                        '<textarea name="tex" rows="4" cols="50">',
+                        allText[0].htmlStr,
+                        '</textarea>'
+                    ].join(''),
+                    buttons: [
+                        $.extend({}, vex.dialog.buttons.YES, {
+                            text: 'Done'
+                        }),
+                        $.extend({}, vex.dialog.buttons.NO, {
+                            text: 'Back'
+                        })
+                    ],
+                    callback: function (data) {
+                        if (data) {
+                            var a = data.tex.split("");
+                            for (var i = 0; i < a.length; i++) {
+                                if (a[i] == "\\") {
+                                    a[i] = "\\\\";
+                                }
+                            }
+                            a = a.join("")
+                            allText[textChoice].setText(a);
+                        }
+                    }
+                })
             }
         }
 
