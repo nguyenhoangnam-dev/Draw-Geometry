@@ -750,29 +750,6 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                         })
                         tangent.push(allPoint[pointChoice]);
                     } else {
-                        // var clickX = click.pageX;
-                        // var clickY = click.pageY;
-                        // var pointX = coorX(clickX);
-                        // var pointY = coorY(clickY);
-                        // allPoint.push(
-                        //     brd.create("point", [pointX, pointY], {
-                        //         fillColor: "#eeeeee",
-                        //         strokeColor: "#c3d9ff",
-                        //         strokeWidth: 1,
-                        //         highlightFillColor: "#ff0000",
-                        //         highlightStrokeColor: "#ff0000",
-                        //         size: 3,
-                        //         label: {
-                        //             fixed: false
-                        //         }
-                        //     })
-                        // );
-                        // allPointColor.push(["#eeeeee", "#c3d9ff", 1])
-                        // onlyChoice(allPoint, allPointColor)
-                        // allPoint[allPoint.length - 1].setAttribute({
-                        //     fillColor: "#ff0000",
-                        //     strokeColor: "#ff0000"
-                        // })
                         createPoint(0, click, allPoint, 0, allPointColor, "point")
                         tangent.push(allPoint[allPoint.length - 1])
                     }
@@ -780,17 +757,81 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                     if (circChoice + 1) {
                         if (pointKind.includes(tangent[0].elType)) {
                             tangent.push(allCirc[circChoice]);
-                            sample = brd.create('polarline', tangent)
+                            sample = brd.create('polarline', tangent, {
+                                visible: false
+                            })
 
+                            tempInter = brd.create('intersection', [sample, tangent[1]], {
+                                name: "",
+                                visible: false
+                            })
+                            if (checkConc(allPoint, tempInter)) {
+                                delete tempInter;
+                            } else {
+                                kindPoint(allPoint, 'intersection', [sample, tangent[1]], allPointColor)
+                                allLine.push(brd.create('line', [allPoint[allPoint.length - 1].name, tangent[0].name], {
+                                    strokeColor: "#000000",
+                                    strokeWidth: 1
+                                }))
+                            }
+
+                            tempInter = brd.create('intersection', [sample, tangent[1], 1], {
+                                name: "",
+                                visible: false
+                            })
+
+                            if (checkConc(allPoint, tempInter)) {
+                                delete tempInter;
+                            } else {
+                                kindPoint(allPoint, 'intersection', [sample, tangent[1], 1], allPointColor)
+                                allLine.push(brd.create('line', [allPoint[allPoint.length - 1].name, tangent[0].name], {
+                                    strokeColor: "#000000",
+                                    strokeWidth: 1
+                                }))
+                            }
                         }
                         tangent = []
-
+                        allLineColor.push("#000000")
+                        allLineWidth.push(1)
                     } else if (pointChoice + 1) {
                         if (circleKind.includes(tangent[0].elType)) {
                             tangent.push(allPoint[pointChoice]);
-                            sample = brd.create('polarline', tangent)
+                            sample = brd.create('polarline', tangent, {
+                                visible: false
+                            })
+
+                            tempInter = brd.create('intersection', [tangent[0], sample], {
+                                name: "",
+                                visible: false
+                            })
+                            if (checkConc(allPoint, tempInter)) {
+                                delete tempInter;
+                            } else {
+                                kindPoint(allPoint, 'intersection', [tangent[0], sample], allPointColor)
+                                allLine.push(brd.create('line', [allPoint[allPoint.length - 1].name, tangent[1].name], {
+                                    strokeColor: "#000000",
+                                    strokeWidth: 1
+                                }))
+                            }
+
+                            tempInter = brd.create('intersection', [tangent[0], sample, 1], {
+                                name: "",
+                                visible: false
+                            })
+
+                            if (checkConc(allPoint, tempInter)) {
+                                delete tempInter;
+                            } else {
+                                kindPoint(allPoint, 'intersection', [tangent[0], sample, 1], allPointColor)
+                                allLine.push(brd.create('line', [allPoint[allPoint.length - 1].name, tangent[1].name], {
+                                    strokeColor: "#000000",
+                                    strokeWidth: 1
+                                }))
+                            }
                         }
                         tangent = []
+                        allLineColor.push("#000000")
+                        allLineWidth.push(1)
                     }
                 }
             }
