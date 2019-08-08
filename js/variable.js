@@ -113,7 +113,7 @@ var perp = []
 
 // This all kind of line, point
 var pointKind = ["point", "intersection", "midpoint"]
-var lineKind = ["line", "perpendicular", "parallel", "segment", "bisector"]
+var lineKind = ["line", "perpendicular", "parallel", "segment", "bisector", "polarline"]
 var circleKind = ["circle", "circumcircle", "incircle"]
 
 // This for parallel
@@ -124,6 +124,10 @@ var segment = []
 
 // This for angle bisector
 var ang = []
+
+// This for tangent
+var tangent = []
+var sample
 
 // This for circumcircle
 var circum = []

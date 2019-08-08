@@ -1,16 +1,3 @@
-clearChoice = choice => {
-    for (var i = 0; i < choice.length; i++) {
-        if (choice[i] != null) {
-            if (
-                choice[i].classList.value.split(" ").filter(value => value == "choice")
-                .length != 0
-            ) {
-                choice[i].classList.remove("choice");
-            }
-        }
-    }
-};
-
 clearClass = (choice, classes) => {
     for (var i = 0; i < choice.length; i++) {
         if (choice[i] != null) {
@@ -152,4 +139,36 @@ checkConc = (allPoint, tempInter) => {
         i++
     }
     return k
+}
+
+pointXY = click => [coorX(click.pageX), coorY(click.pageY)]
+
+kindPoint = (allPoint, kind, coo, allPointColor) => {
+    allPoint.push(
+        brd.create(kind, coo, {
+            fillColor: "#eeeeee",
+            strokeColor: "#c3d9ff",
+            strokeWidth: 1,
+            highlightFillColor: "#ff0000",
+            highlightStrokeColor: "#ff0000",
+            size: 3,
+            label: {
+                fixed: false
+            }
+        })
+    );
+    allPointColor.push(["#eeeeee", "#c3d9ff", 1])
+    onlyChoice(allPoint, allPointColor)
+    allPoint[allPoint.length - 1].setAttribute({
+        fillColor: "#ff0000",
+        strokeColor: "#ff0000"
+    })
+}
+
+createPoint = (choice, click, allPoint, all, allPointColor, kind) => {
+    var coo = pointXY(click);
+    if (kind == "glider") {
+        coo = [pointXY(click)[0], pointXY(click)[1], all[choice]]
+    }
+    kindPoint(allPoint, kind, coo, allPointColor)
 }
