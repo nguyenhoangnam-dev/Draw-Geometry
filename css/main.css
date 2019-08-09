@@ -304,6 +304,7 @@ body {
     text-align: center;
     line-height: 45px;
     background-color: #ffffff;
+    word-wrap: break-word;
 }
 
 .flex-container>div:hover {
@@ -332,6 +333,7 @@ body {
     text-align: center;
     line-height: 45px;
     background-color: #ffffff;
+    word-wrap: break-word;
 }
 
 .not-choice {

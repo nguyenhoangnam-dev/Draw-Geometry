@@ -108,13 +108,20 @@ var mid = [];
 // This for intersection
 var inter = []
 
+// This for circumcenter
+var circumCenter = []
+
+// This for incenter
+var inCenter = []
+
 // This create a perpendicular
 var perp = []
 
 // This all kind of line, point
-var pointKind = ["point", "intersection", "midpoint"]
+var pointKind = ["point", "intersection", "midpoint", "circumcenter", "incenter"]
 var lineKind = ["line", "perpendicular", "parallel", "segment", "bisector", "polarline"]
 var circleKind = ["circle", "circumcircle", "incircle"]
+var conicKind = ["hyperbola", "ellipse", "conic", "parabola"]
 
 // This for parallel
 var para = [];
@@ -135,10 +142,22 @@ var circum = []
 // This for incircle
 var incircle = []
 
+// This for excircle
+var excircle = []
+
+// This for conic
+var isConic = []
+var ellipse = []
+var parabola = []
+var hyperbola = []
+
+var allConic = []
+
 // This save color of allpoint
 var allPointColor = []
 var allLineColor = []
 var allCircColor = []
+var allConicColor = []
 
 //  This is temporary store intersection point
 var tempInter
@@ -149,6 +168,7 @@ var download = document.getElementById("download");
 var slider = document.getElementById("range");
 var allLineWidth = []
 var allCircWidth = []
+var allConicWidth = []
 
 // This for search 
 var options = {
@@ -194,7 +214,7 @@ var values = [{
     },
     {
         id: 10,
-        name: 'Circumcenter'
+        name: 'Antipode'
     },
     {
         id: 11,
@@ -316,7 +336,6 @@ var values = [{
         id: 40,
         name: 'Perpendicular bisector'
     },
-
     {
         id: 41,
         name: 'Steiner line'
@@ -357,6 +376,22 @@ var values = [{
         id: 50,
         name: 'Isogonal conjugate'
     },
+    {
+        id: 51,
+        name: 'Intouch triangle'
+    },
+    {
+        id: 52,
+        name: 'Equilateral triangle'
+    },
+    {
+        id: 53,
+        name: 'Radical axis'
+    },
+    {
+        id: 54,
+        name: 'Radical center'
+    }
 ];
 
 var search = document.getElementById("search");
