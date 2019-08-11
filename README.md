@@ -87,6 +87,9 @@ In top-right we have 4 option:
 
 In top-right we have 5 option
 
+- Normal: Only draw a conic
+
+
 ## CONTACT
 
 My email: congviec18120062@gmail.com
