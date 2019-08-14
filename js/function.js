@@ -36,41 +36,14 @@ coorX = clickX =>
 coorY = clickY =>
     Math.round(((101 + hei / 2 - clickY) * axisY * 100 * 2) / hei) / 100;
 
-whichPoint = allPoint => {
-    for (var i = 0; i < allPoint.length; i++) {
-        if (allPoint[i].mouseover) {
-            return i;
+whichAll = allKind => {
+    for (var i = 0; i < allKind.length; i++) {
+        if (allKind[i].mouseover) {
+            return i
         }
     }
     return -1;
-};
-
-whichLine = allLine => {
-    for (var i = 0; i < allLine.length; i++) {
-        if (allLine[i].mouseover) {
-            return i;
-        }
-    }
-    return -1;
-};
-
-whichCirc = allCirc => {
-    for (var i = 0; i < allCirc.length; i++) {
-        if (allCirc[i].mouseover) {
-            return i;
-        }
-    }
-    return -1;
-};
-
-whichText = allText => {
-    for (var i = 0; i < allText.length; i++) {
-        if (allText[i].mouseover) {
-            return i;
-        }
-    }
-    return -1;
-};
+}
 
 allVisible = (allPoint, allLine, allCirc, allText) => {
     for (var i = 0; i < allPoint.length; i++) {

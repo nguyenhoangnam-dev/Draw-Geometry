@@ -1,6 +1,9 @@
 // This is all variable in project
+// This is for high performent
+var doc = document
+
 // This is jxgbox id
-var box = document.getElementById("jxgbox")
+var box = doc.getElementById("jxgbox")
 
 // This is width, height of jxgbox
 const wid = box.offsetWidth;
@@ -20,18 +23,18 @@ var brd = JXG.JSXGraph.initBoard("jxgbox", {
 
 
 // This is basic event
-var mouse = document.getElementById("mouse");
-var point = document.getElementById("point");
-var line = document.getElementById("line");
-var circle = document.getElementById("circle");
-var conic = document.getElementById("conic");
+var mouse = doc.getElementById("mouse");
+var point = doc.getElementById("point");
+var line = doc.getElementById("line");
+var circle = doc.getElementById("circle");
+var conic = doc.getElementById("conic");
 var choice = [mouse, point, line, circle, conic];
 
 // This for color-picker
-var fill = document.getElementById("fillColor");
+var fill = doc.getElementById("fillColor");
 fill.value = ""
 var fillColor = new CP(fill);
-var stroke = document.getElementById("strokeColor");
+var stroke = doc.getElementById("strokeColor");
 stroke.value = ""
 var strokeColor = new CP(stroke);
 
@@ -57,30 +60,30 @@ var allText = []
 var newText = [];
 
 // This is where to show more tool
-var moreTool = document.getElementById("moreTool");
+var moreTool = doc.getElementById("moreTool");
 
 // Make button
-var squareDiv = document.createElement('div');
+var squareDiv = doc.createElement('div');
 squareDiv.id = 'one';
 squareDiv.className = 'square';
 
-var squareDiv1 = document.createElement('div');
+var squareDiv1 = doc.createElement('div');
 squareDiv1.id = 'two';
 squareDiv1.className = 'square';
 
-var squareDiv2 = document.createElement('div');
+var squareDiv2 = doc.createElement('div');
 squareDiv2.id = 'three';
 squareDiv2.className = 'square';
 
-var squareDiv3 = document.createElement('div');
+var squareDiv3 = doc.createElement('div');
 squareDiv3.id = 'four';
 squareDiv3.className = 'square';
 
-var squareDiv4 = document.createElement('div');
+var squareDiv4 = doc.createElement('div');
 squareDiv4.id = 'five';
 squareDiv4.className = 'square';
 
-var squareDiv5 = document.createElement('div');
+var squareDiv5 = doc.createElement('div');
 squareDiv5.id = 'six';
 squareDiv5.className = 'square';
 
@@ -92,12 +95,12 @@ moreTool.appendChild(squareDiv4);
 moreTool.appendChild(squareDiv5);
 
 var tex;
-var one = document.getElementById('one')
-var two = document.getElementById('two')
-var three = document.getElementById('three')
-var four = document.getElementById('four')
-var five = document.getElementById('five')
-var six = document.getElementById('six')
+var one = doc.getElementById('one')
+var two = doc.getElementById('two')
+var three = doc.getElementById('three')
+var four = doc.getElementById('four')
+var five = doc.getElementById('five')
+var six = doc.getElementById('six')
 
 // This is all more tool choice
 var choiceTool = [one, two, three, four, five, six];
@@ -163,9 +166,9 @@ var allConicColor = []
 var tempInter
 
 // This for screenshot 
-var download = document.getElementById("download");
+var download = doc.getElementById("download");
 
-var slider = document.getElementById("range");
+var slider = doc.getElementById("range");
 var allLineWidth = []
 var allCircWidth = []
 var allConicWidth = []
@@ -394,10 +397,10 @@ var values = [{
     }
 ];
 
-var search = document.getElementById("search");
+var search = doc.getElementById("search");
 var searchValue;
-var listOption = document.getElementById("list");
-var textChoice = document.getElementsByClassName("name")
+var listOption = doc.getElementById("list");
+var textChoice = doc.getElementsByClassName("name")
 var userList = new List('users', options, values)
 userList.show(1, 10);
 

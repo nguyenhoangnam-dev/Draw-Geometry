@@ -2,31 +2,31 @@
 
 // This use for default choice
 
-tex = document.createTextNode("Normal");
+tex = doc.createTextNode("Normal");
 squareDiv.appendChild(tex);
 squareDiv.classList.add("choice");
 moreTool.appendChild(squareDiv);
-tex = document.createTextNode("Eraser");
+tex = doc.createTextNode("Eraser");
 squareDiv1.appendChild(tex);
 moreTool.appendChild(squareDiv1);
-tex = document.createTextNode("Show");
+tex = doc.createTextNode("Show");
 squareDiv2.appendChild(tex);
 moreTool.appendChild(squareDiv2);
-tex = document.createTextNode("Hide");
+tex = doc.createTextNode("Hide");
 squareDiv3.appendChild(tex);
 moreTool.appendChild(squareDiv3);
-tex = document.createTextNode("Text");
+tex = doc.createTextNode("Text");
 squareDiv4.appendChild(tex);
 moreTool.appendChild(squareDiv4);
-tex = document.createTextNode("More");
+tex = doc.createTextNode("More");
 squareDiv5.appendChild(tex);
 moreTool.appendChild(squareDiv5);
 
-one = document.getElementById('one')
-two = document.getElementById('two')
-three = document.getElementById('three')
-four = document.getElementById('four')
-five = document.getElementById('five')
+one = doc.getElementById('one')
+two = doc.getElementById('two')
+three = doc.getElementById('three')
+four = doc.getElementById('four')
+five = doc.getElementById('five')
 
 fill.value = ""
 fill.disabled = true
@@ -49,38 +49,38 @@ mouse.addEventListener("click", () => {
         clearClass(choiceTool, "choice");
         clearClass(choiceTool, "not-choice");
         mouse.classList.add("choice");
-        tex = document.createTextNode("Normal");
+        tex = doc.createTextNode("Normal");
         squareDiv.appendChild(tex);
         squareDiv.classList.add("choice");
         moreTool.appendChild(squareDiv);
-        tex = document.createTextNode("Eraser");
+        tex = doc.createTextNode("Eraser");
         squareDiv1.appendChild(tex);
         moreTool.appendChild(squareDiv1);
-        tex = document.createTextNode("Show");
+        tex = doc.createTextNode("Show");
         squareDiv2.appendChild(tex);
         moreTool.appendChild(squareDiv2);
-        tex = document.createTextNode("Hide");
+        tex = doc.createTextNode("Hide");
         squareDiv3.appendChild(tex);
         moreTool.appendChild(squareDiv3);
-        tex = document.createTextNode("Text");
+        tex = doc.createTextNode("Text");
         squareDiv4.appendChild(tex);
         moreTool.appendChild(squareDiv4);
-        tex = document.createTextNode("More");
+        tex = doc.createTextNode("More");
         squareDiv5.appendChild(tex);
         moreTool.appendChild(squareDiv5);
     }
 
-    one = document.getElementById('one')
-    two = document.getElementById('two')
-    three = document.getElementById('three')
-    four = document.getElementById('four')
-    five = document.getElementById('five')
-    six = document.getElementById('six')
+    one = doc.getElementById('one')
+    two = doc.getElementById('two')
+    three = doc.getElementById('three')
+    four = doc.getElementById('four')
+    five = doc.getElementById('five')
+    six = doc.getElementById('six')
 });
 
 search.value = ""
 
-document.getElementsByTagName("body")[0].onclick = (click) => {
+doc.getElementsByTagName("body")[0].onclick = (click) => {
     if (click.target !== search) {
         listOption.classList.add("hide")
     } else {
@@ -123,31 +123,31 @@ point.addEventListener("click", () => {
         clearClass(choiceTool, "choice");
         clearClass(choiceTool, "not-choice");
         point.classList.add("choice");
-        tex = document.createTextNode("Normal");
+        tex = doc.createTextNode("Normal");
         squareDiv.appendChild(tex);
         squareDiv.classList.add("choice");
         moreTool.appendChild(squareDiv);
-        tex = document.createTextNode("Mid");
+        tex = doc.createTextNode("Mid");
         squareDiv1.appendChild(tex);
         moreTool.appendChild(squareDiv1);
-        tex = document.createTextNode("Intersect");
+        tex = doc.createTextNode("Intersect");
         squareDiv2.appendChild(tex);
         moreTool.appendChild(squareDiv2);
-        tex = document.createTextNode("Center");
+        tex = doc.createTextNode("Center");
         squareDiv3.appendChild(tex);
         moreTool.appendChild(squareDiv3);
-        tex = document.createTextNode("Incenter");
+        tex = doc.createTextNode("Incenter");
         squareDiv4.appendChild(tex);
         moreTool.appendChild(squareDiv4);
         squareDiv5.classList.add("not-choice")
         moreTool.appendChild(squareDiv5);
     }
-    one = document.getElementById('one')
-    two = document.getElementById('two')
-    three = document.getElementById('three')
-    four = document.getElementById('four')
-    five = document.getElementById('five')
-    six = document.getElementById('six')
+    one = doc.getElementById('one')
+    two = doc.getElementById('two')
+    three = doc.getElementById('three')
+    four = doc.getElementById('four')
+    five = doc.getElementById('five')
+    six = doc.getElementById('six')
 
     fill.value = ""
     fill.disabled = true
@@ -169,32 +169,32 @@ line.addEventListener("click", () => {
         clearClass(choiceTool, "choice");
         clearClass(choiceTool, "not-choice");
         line.classList.add("choice");
-        tex = document.createTextNode("Normal");
+        tex = doc.createTextNode("Normal");
         squareDiv.appendChild(tex);
         squareDiv.classList.add("choice");
         moreTool.appendChild(squareDiv);
-        tex = document.createTextNode("Perpen");
+        tex = doc.createTextNode("Perpen");
         squareDiv1.appendChild(tex);
         moreTool.appendChild(squareDiv1);
-        tex = document.createTextNode("Parallel");
+        tex = doc.createTextNode("Parallel");
         squareDiv2.appendChild(tex);
         moreTool.appendChild(squareDiv2);
-        tex = document.createTextNode("Segment");
+        tex = doc.createTextNode("Segment");
         squareDiv3.appendChild(tex);
         moreTool.appendChild(squareDiv3);
-        tex = document.createTextNode("Angle");
+        tex = doc.createTextNode("Angle");
         squareDiv4.appendChild(tex);
         moreTool.appendChild(squareDiv4);
-        tex = document.createTextNode("Tangent");
+        tex = doc.createTextNode("Tangent");
         squareDiv5.appendChild(tex);
         moreTool.appendChild(squareDiv5);
     }
-    one = document.getElementById('one')
-    two = document.getElementById('two')
-    three = document.getElementById('three')
-    four = document.getElementById('four')
-    five = document.getElementById('five')
-    six = document.getElementById('six')
+    one = doc.getElementById('one')
+    two = doc.getElementById('two')
+    three = doc.getElementById('three')
+    four = doc.getElementById('four')
+    five = doc.getElementById('five')
+    six = doc.getElementById('six')
 
     fill.value = ""
     fill.disabled = true
@@ -216,17 +216,17 @@ circle.addEventListener("click", () => {
         clearClass(choiceTool, "choice");
         clearClass(choiceTool, "not-choice");
         circle.classList.add("choice");
-        tex = document.createTextNode("Normal");
+        tex = doc.createTextNode("Normal");
         squareDiv.appendChild(tex);
         squareDiv.classList.add("choice");
         moreTool.appendChild(squareDiv);
-        tex = document.createTextNode("Circum");
+        tex = doc.createTextNode("Circum");
         squareDiv1.appendChild(tex);
         moreTool.appendChild(squareDiv1);
-        tex = document.createTextNode("Incircle");
+        tex = doc.createTextNode("Incircle");
         squareDiv2.appendChild(tex);
         moreTool.appendChild(squareDiv2);
-        tex = document.createTextNode("Excircle");
+        tex = doc.createTextNode("Excircle");
         squareDiv3.appendChild(tex);
         moreTool.appendChild(squareDiv3);
         squareDiv4.classList.add("not-choice")
@@ -234,12 +234,12 @@ circle.addEventListener("click", () => {
         squareDiv5.classList.add("not-choice")
         moreTool.appendChild(squareDiv5);
     }
-    one = document.getElementById('one')
-    two = document.getElementById('two')
-    three = document.getElementById('three')
-    four = document.getElementById('four')
-    five = document.getElementById('five')
-    six = document.getElementById('six')
+    one = doc.getElementById('one')
+    two = doc.getElementById('two')
+    three = doc.getElementById('three')
+    four = doc.getElementById('four')
+    five = doc.getElementById('five')
+    six = doc.getElementById('six')
 
     fill.value = ""
     fill.disabled = true
@@ -261,30 +261,30 @@ conic.addEventListener("click", () => {
         clearClass(choiceTool, "choice");
         clearClass(choiceTool, "not-choice");
         conic.classList.add("choice");
-        tex = document.createTextNode("Normal");
+        tex = doc.createTextNode("Normal");
         squareDiv.appendChild(tex);
         squareDiv.classList.add("choice");
         moreTool.appendChild(squareDiv);
-        tex = document.createTextNode("Ellipse");
+        tex = doc.createTextNode("Ellipse");
         squareDiv1.appendChild(tex);
         moreTool.appendChild(squareDiv1);
-        tex = document.createTextNode("Parabola");
+        tex = doc.createTextNode("Parabola");
         squareDiv2.appendChild(tex);
         moreTool.appendChild(squareDiv2);
-        tex = document.createTextNode("Hyper");
+        tex = doc.createTextNode("Hyper");
         squareDiv3.appendChild(tex);
         moreTool.appendChild(squareDiv3);
-        squareDiv5.classList.add("not-choice")
+        squareDiv4.classList.add("not-choice")
         moreTool.appendChild(squareDiv4);
         squareDiv5.classList.add("not-choice")
         moreTool.appendChild(squareDiv5);
     }
-    one = document.getElementById('one')
-    two = document.getElementById('two')
-    three = document.getElementById('three')
-    four = document.getElementById('four')
-    five = document.getElementById('five')
-    six = document.getElementById('six')
+    one = doc.getElementById('one')
+    two = doc.getElementById('two')
+    three = doc.getElementById('three')
+    four = doc.getElementById('four')
+    five = doc.getElementById('five')
+    six = doc.getElementById('six')
 
     fill.value = ""
     fill.disabled = true
@@ -343,14 +343,14 @@ six.addEventListener("click", () => {
 });
 
 download.addEventListener("click", () => {
-    var canvasScreen = document.getElementsByTagName("canvas");
+    var canvasScreen = doc.getElementsByTagName("canvas");
     download.href = canvasScreen[0].toDataURL();
     download.target = "blank";
     download.download = 'screenshot.png';
     download.click();
 })
 
-document.getElementById("jxgbox").addEventListener("click", click => {
+doc.getElementById("jxgbox").addEventListener("click", click => {
     if (checkChoice(choice) >= 1) {
         fill.value = ""
         fill.disabled = true
@@ -377,8 +377,8 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                 inter = []
                 circumCenter = []
                 inCenter = []
-                lineChoice = whichLine(allLine);
-                circChoice = whichCirc(allCirc);
+                lineChoice = whichAll(allLine);
+                circChoice = whichAll(allCirc);
                 if (lineChoice + 1) {
                     createPoint(lineChoice, click, allPoint, allLine, allPointColor, "glider")
                 } else if (circChoice + 1) {
@@ -390,8 +390,8 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                 inter = []
                 circumCenter = []
                 inCenter = []
-                pointChoice = whichPoint(allPoint);
-                lineChoice = whichLine(allLine);
+                pointChoice = whichAll(allPoint);
+                lineChoice = whichAll(allLine);
                 if (pointChoice + 1) {
                     lineChoice = -1
                 }
@@ -435,8 +435,8 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                 mid = []
                 circumCenter = []
                 inCenter = []
-                lineChoice = whichLine(allLine);
-                circChoice = whichCirc(allCirc);
+                lineChoice = whichAll(allLine);
+                circChoice = whichAll(allCirc);
                 if (inter.length == 0) {
                     if (lineChoice + 1) {
                         inter.push(allLine[lineChoice]);
@@ -502,8 +502,8 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                 mid = []
                 inter = []
                 inCenter = []
-                pointChoice = whichPoint(allPoint);
-                circChoice = whichCirc(allCirc);
+                pointChoice = whichAll(allPoint);
+                circChoice = whichAll(allCirc);
                 if (circumCenter.length == 0) {
                     if (pointChoice + 1) {
                         onlyChoice(allPoint, allPointColor)
@@ -547,7 +547,7 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                 mid = []
                 inter = []
                 circumCenter = []
-                pointChoice = whichPoint(allPoint);
+                pointChoice = whichAll(allPoint);
                 if (inCenter.length == 0) {
                     if (pointChoice + 1) {
                         onlyChoice(allPoint, allPointColor)
@@ -601,9 +601,9 @@ document.getElementById("jxgbox").addEventListener("click", click => {
             ellipse = []
             parabola = []
             hyperbola = []
-            pointChoice = whichPoint(allPoint);
-            lineChoice = whichLine(allLine);
-            circChoice = whichCirc(allCirc);
+            pointChoice = whichAll(allPoint);
+            lineChoice = whichAll(allLine);
+            circChoice = whichAll(allCirc);
             if (pointChoice + 1) {
                 lineChoice = -1
                 circChoice = -1
@@ -1003,7 +1003,7 @@ document.getElementById("jxgbox").addEventListener("click", click => {
             ellipse = []
             parabola = []
             hyperbola = []
-            pointChoice = whichPoint(allPoint);
+            pointChoice = whichAll(allPoint);
             if (checkChoice(choiceTool) == 0) {
                 circum = []
                 incircle = []
@@ -1238,8 +1238,8 @@ document.getElementById("jxgbox").addEventListener("click", click => {
             circum = []
             incircle = []
             excircle = []
-            pointChoice = whichPoint(allPoint);
-            lineChoice = whichLine(allLine);
+            pointChoice = whichAll(allPoint);
+            lineChoice = whichAll(allLine);
             if (pointChoice + 1) {
                 lineChoice = -1
             }
@@ -1495,10 +1495,10 @@ document.getElementById("jxgbox").addEventListener("click", click => {
         isCirc = []
         circum = []
         incircle = []
-        pointChoice = whichPoint(allPoint);
-        lineChoice = whichLine(allLine);
-        circChoice = whichCirc(allCirc);
-        textChoice = whichText(allText);
+        pointChoice = whichAll(allPoint);
+        lineChoice = whichAll(allLine);
+        circChoice = whichAll(allCirc);
+        textChoice = whichAll(allText);
 
         if (pointChoice + 1) {
             onlyChoice(allPoint, allPointColor)
@@ -1533,52 +1533,6 @@ document.getElementById("jxgbox").addEventListener("click", click => {
             var clickY = click.pageY;
             var pointX = coorX(clickX);
             var pointY = coorY(clickY);
-            vex.dialog.open({
-                message: 'Type your text or latex',
-                input: [
-                    '<style>',
-                    '.vex-custom-field-wrapper {',
-                    'margin: 1em 0;',
-                    '}',
-                    '.vex-custom-field-wrapper > label {',
-                    'display: inline-block;',
-                    'margin-bottom: .2em;',
-                    '}',
-                    '</style>',
-                    '<div class="vex-custom-field-wrapper">',
-                    '<label for="font-size">Font size</label>',
-                    '<div class="vex-custom-input-wrapper">',
-                    '<input name="font_size" type="number" id="font-size" value="18" min="12 max="40"/>',
-                    '</div>',
-                    '</div>',
-                    '<label for="tex">Tex</label>',
-                    '<textarea name="tex" rows="4" cols="50"></textarea>'
-                ].join(''),
-                buttons: [
-                    $.extend({}, vex.dialog.buttons.YES, {
-                        text: 'Done'
-                    }),
-                    $.extend({}, vex.dialog.buttons.NO, {
-                        text: 'Back'
-                    })
-                ],
-                callback: function (data) {
-                    if (data) {
-                        var a = data.tex.split("");
-                        for (var i = 0; i < a.length; i++) {
-                            if (a[i] == "\\") {
-                                a[i] = "\\\\";
-                            }
-                        }
-                        a = a.join("")
-                        allText.push(brd.create('text', [pointX, pointY, a], {
-                            fontSize: data.font_size,
-                            useMathJax: true
-                        }))
-                    }
-                }
-            })
-        } else if (checkChoice(choiceTool) == 0) {
             if (textChoice + 1) {
                 vex.dialog.open({
                     message: 'Type your text or latex',
@@ -1621,6 +1575,52 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                             }
                             a = a.join("")
                             allText[textChoice].setText(a);
+                        }
+                    }
+                })
+            } else {
+                vex.dialog.open({
+                    message: 'Type your text or latex',
+                    input: [
+                        '<style>',
+                        '.vex-custom-field-wrapper {',
+                        'margin: 1em 0;',
+                        '}',
+                        '.vex-custom-field-wrapper > label {',
+                        'display: inline-block;',
+                        'margin-bottom: .2em;',
+                        '}',
+                        '</style>',
+                        '<div class="vex-custom-field-wrapper">',
+                        '<label for="font-size">Font size</label>',
+                        '<div class="vex-custom-input-wrapper">',
+                        '<input name="font_size" type="number" id="font-size" value="18" min="12 max="40"/>',
+                        '</div>',
+                        '</div>',
+                        '<label for="tex">Tex</label>',
+                        '<textarea name="tex" rows="4" cols="50"></textarea>'
+                    ].join(''),
+                    buttons: [
+                        $.extend({}, vex.dialog.buttons.YES, {
+                            text: 'Done'
+                        }),
+                        $.extend({}, vex.dialog.buttons.NO, {
+                            text: 'Back'
+                        })
+                    ],
+                    callback: function (data) {
+                        if (data) {
+                            var a = data.tex.split("");
+                            for (var i = 0; i < a.length; i++) {
+                                if (a[i] == "\\") {
+                                    a[i] = "\\\\";
+                                }
+                            }
+                            a = a.join("")
+                            allText.push(brd.create('text', [pointX, pointY, a], {
+                                fontSize: data.font_size,
+                                useMathJax: true
+                            }))
                         }
                     }
                 })
@@ -1748,6 +1748,5 @@ document.getElementById("jxgbox").addEventListener("click", click => {
                 allCircWidth[circChoice] = slider.value
             }
         }
-
     }
 });

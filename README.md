@@ -12,14 +12,14 @@
         <img src="https://img.shields.io/badge/geometry-Euclid-blue" />
     </a>
     <a href="https://github.com/congviec18120062/Draw-Geometry/blob/master" alt="GitHub license">
-        <img src="https://img.shields.io/badge/version-1.7.2-orange" />
+        <img src="https://img.shields.io/badge/version-1.7.3-orange" />
     </a>
     <a href="https://github.com/congviec18120062/Draw-Geometry/blob/master" alt="GitHub license">
         <img src="https://img.shields.io/badge/framework-JSXGraph-brightgreen" />
     </a>
 </p>
 
-# Draw-Geometry (v1.7.2)
+# Draw-Geometry (v1.7.3)
 
 This is [drawing-app](https://congviec18120062.github.io/Draw-Geometry/) with simple UI. Moreover, my inspiration is GSP and Geogebra which I use during highschool.
 
@@ -55,9 +55,9 @@ In top-right we have 4 option:
 
 - Normal: Only draw a point.
 - Midpoint: Draw midpoint between two points.
-> Choose two point or choose one segment
+  > Choose two point or choose one segment
 - Intersect: Intersection of two lines.
-> Choose two lines, two circle or one circle and one line (one line and one circle is similar)
+  > Choose two lines, two circle or one circle and one line (one line and one circle is similar)
 
 ### Line
 
@@ -66,9 +66,9 @@ In top-right we have 4 option:
 In top-right we have 4 option:
 
 - Normal: Only draw a line.
-> Choose two points
+  > Choose two points
 - Perpen: This is perpendicular line from one point to one line.
-> Choose one point and one line (one line and one circle is similar)
+  > Choose one point and one line (one line and one circle is similar)
 - Parallel: This is parallel line of one point and one line.
 - Segment: This is segment between two points.
 - Angle: This is angle bisector.
