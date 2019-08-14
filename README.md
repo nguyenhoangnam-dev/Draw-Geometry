@@ -88,7 +88,13 @@ In top-right we have 4 option:
 In top-right we have 5 option
 
 - Normal: Only draw a conic
+- Ellipse: Draw ellipse with two foci and one point
+- Parabola: Draw parabola with one point and one line
+- Hyper: Draw hyperbola with two foci and one point
 
+## COMMIT
+
+I hope you follow [this rule](https://gitmoji.carloscuesta.me/) when commit anything new.
 
 ## CONTACT
 
