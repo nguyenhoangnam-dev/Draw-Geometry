@@ -19,7 +19,7 @@
     </a>
 </p>
 
-# Draw-Geometry (v1.7.4)
+# Draw-Geometry (v1.7.5)
 
 This is [drawing-app](https://congviec18120062.github.io/Draw-Geometry/) with simple UI. Moreover, my inspiration is GSP and Geogebra which I use during highschool.
 
