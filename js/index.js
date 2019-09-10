@@ -292,6 +292,51 @@ conic.addEventListener("click", () => {
     stroke.disabled = true;
 });
 
+transform.addEventListener("click", () => {
+    if (checkChoice(choice) != 5) {
+        while (moreTool.hasChildNodes()) {
+            child = moreTool.firstChild;
+            if (child.hasChildNodes()) {
+                child.removeChild(child.firstChild);
+            }
+            moreTool.removeChild(moreTool.firstChild);
+        }
+
+        clearClass(choice, "choice");
+        clearClass(choiceTool, "choice");
+        clearClass(choiceTool, "not-choice");
+        transform.classList.add("choice");
+        tex = doc.createTextNode("RLine");
+        squareDiv.appendChild(tex);
+        squareDiv.classList.add("choice");
+        moreTool.appendChild(squareDiv);
+        tex = doc.createTextNode("RPoint");
+        squareDiv1.appendChild(tex);
+        moreTool.appendChild(squareDiv1);
+        tex = doc.createTextNode("RCircle");
+        squareDiv2.appendChild(tex);
+        moreTool.appendChild(squareDiv2);
+        tex = doc.createTextNode("Inverse");
+        squareDiv3.appendChild(tex);
+        moreTool.appendChild(squareDiv3);
+        squareDiv4.classList.add("not-choice")
+        moreTool.appendChild(squareDiv4);
+        squareDiv5.classList.add("not-choice")
+        moreTool.appendChild(squareDiv5);
+    }
+    one = doc.getElementById('one')
+    two = doc.getElementById('two')
+    three = doc.getElementById('three')
+    four = doc.getElementById('four')
+    five = doc.getElementById('five')
+    six = doc.getElementById('six')
+
+    fill.value = ""
+    fill.disabled = true
+    stroke.value = "";
+    stroke.disabled = true;
+});
+
 // This use for more tool
 
 one.addEventListener("click", () => {
@@ -372,6 +417,10 @@ doc.getElementById("jxgbox").addEventListener("click", click => {
             ellipse = []
             parabola = []
             hyperbola = []
+            reflectAboutPoint = []
+            reflectAboutCircle = []
+            inverse = []
+            reflectAboutLine = []
             if (checkChoice(choiceTool) == 0) {
                 mid = []
                 inter = []
@@ -601,6 +650,10 @@ doc.getElementById("jxgbox").addEventListener("click", click => {
             ellipse = []
             parabola = []
             hyperbola = []
+            reflectAboutPoint = []
+            reflectAboutCircle = []
+            inverse = []
+            reflectAboutLine = []
             pointChoice = whichAll(allPoint);
             lineChoice = whichAll(allLine);
             circChoice = whichAll(allCirc);
@@ -1003,6 +1056,10 @@ doc.getElementById("jxgbox").addEventListener("click", click => {
             ellipse = []
             parabola = []
             hyperbola = []
+            reflectAboutPoint = []
+            reflectAboutCircle = []
+            inverse = []
+            reflectAboutLine = []
             pointChoice = whichAll(allPoint);
             if (checkChoice(choiceTool) == 0) {
                 circum = []
@@ -1238,6 +1295,10 @@ doc.getElementById("jxgbox").addEventListener("click", click => {
             circum = []
             incircle = []
             excircle = []
+            reflectAboutPoint = []
+            reflectAboutCircle = []
+            inverse = []
+            reflectAboutLine = []
             pointChoice = whichAll(allPoint);
             lineChoice = whichAll(allLine);
             if (pointChoice + 1) {
@@ -1478,6 +1539,250 @@ doc.getElementById("jxgbox").addEventListener("click", click => {
                     allConicColor.push("#000000")
                     allConicWidth.push(1)
                     hyperbola = []
+                }
+            }
+        } else if (checkChoice(choice) == 5) {
+            isLine = []
+            perp = []
+            para = []
+            segment = []
+            ang = []
+            tangent = []
+            mid = []
+            inter = []
+            circumCenter = []
+            inCenter = []
+            isCirc = []
+            circum = []
+            incircle = []
+            excircle = []
+            ellipse = []
+            parabola = []
+            hyperbola = []
+            isConic = []
+            pointChoice = whichAll(allPoint);
+            lineChoice = whichAll(allLine);
+            circChoice = whichAll(allCirc);
+            if (pointChoice + 1) {
+                lineChoice = -1
+                circChoice = -1
+            }
+            if (checkChoice(choiceTool) == 0) {
+                reflectAboutPoint = []
+                reflectAboutCircle = []
+                inverse = []
+                if (reflectAboutLine.length == 0) {
+                    if (lineChoice + 1) {
+                        reflectAboutLine.push(allLine[lineChoice])
+                    } else if (pointChoice + 1) {
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[pointChoice].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
+                        reflectAboutLine.push(allPoint[pointChoice]);
+                    } else {
+                        createPoint(0, click, allPoint, 0, allPointColor, "point")
+                        reflectAboutLine.push(allPoint[allPoint.length - 1]);
+                    }
+                } else {
+                    if (lineChoice + 1) {
+                        if (pointKind.includes(reflectAboutLine[0].elType)) {
+                            reflectAboutLine.push(allLine[lineChoice])
+                            kindPoint(allPoint, 'reflection', reflectAboutLine, allPointColor)
+                            reflectAboutLine = []
+                        }
+                    } else if (pointChoice + 1) {
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[pointChoice].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
+                        if (lineKind.includes(reflectAboutLine[0].elType)) {
+                            reflectAboutLine.push(allPoint[pointChoice])
+                            kindPoint(allPoint, 'reflection', [reflectAboutLine[1], reflectAboutLine[0]], allPointColor)
+                            reflectAboutLine = []
+                        }
+                    } else {
+                        if (lineKind.includes(reflectAboutLine[0].elType)) {
+                            createPoint(0, click, allPoint, 0, allPointColor, "point")
+                            reflectAboutLine.push(allPoint[allPoint.length - 1])
+                            kindPoint(allPoint, 'reflection', [reflectAboutLine[1], reflectAboutLine[0]], allPointColor)
+                            reflectAboutLine = []
+                        }
+                    }
+                }
+            } else if (checkChoice(choiceTool) == 1) {
+                reflectAboutCircle = []
+                inverse = []
+                reflectAboutLine = []
+                if(reflectAboutPoint.length == 0) {
+                    if (pointChoice + 1) {
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[pointChoice].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
+                        reflectAboutPoint.push(allPoint[pointChoice]);
+                    } else {
+                        createPoint(0, click, allPoint, 0, allPointColor, "point")
+                        reflectAboutPoint.push(allPoint[allPoint.length - 1]);
+                    }
+                } else {
+                    if (pointChoice + 1) {
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[pointChoice].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
+                        reflectAboutPoint.push(allPoint[pointChoice]);
+                    } else {
+                        createPoint(0, click, allPoint, 0, allPointColor, "point")
+                        reflectAboutPoint.push(allPoint[allPoint.length - 1]);
+                    }
+                    kindPoint(allPoint, 'mirrorpoint', [reflectAboutPoint[1], reflectAboutPoint[0]], allPointColor)
+                    reflectAboutPoint = [];
+                }
+            } else if (checkChoice(choiceTool) == 2) {
+                reflectAboutPoint = []
+                inverse = []
+                reflectAboutLine = []
+                if (reflectAboutCircle.length == 0) {
+                    if (circChoice + 1) {
+                        reflectAboutCircle.push(allCirc[circChoice]);
+                    } else if (pointChoice + 1) {
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[pointChoice].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
+                        reflectAboutCircle.push(allPoint[pointChoice]);
+                    } else {
+                        createPoint(0, click, allPoint, 0, allPointColor, "point")
+                        reflectAboutCircle.push(allPoint[allPoint.length - 1])
+                    }
+                } else {
+                    if (circChoice + 1) {
+                        if (pointKind.includes(reflectAboutCircle[0].elType)) {
+                            reflectAboutCircle.push(allCirc[circChoice]);
+                            tempLine = brd.create('polarline', reflectAboutCircle, {
+                                name: "",
+                                visible: false
+                            });
+
+                            sample = brd.create('line', [reflectAboutCircle[0], reflectAboutCircle[1].center], {
+                                name: "",
+                                visible: false
+                            });
+
+                            kindPoint(allPoint, 'intersection', [sample, tempLine], allPointColor)
+                        }
+                        reflectAboutCircle = []
+                    } else if (pointChoice + 1) {
+                        if (circleKind.includes(reflectAboutCircle[0].elType)) {
+                            reflectAboutCircle.push(allPoint[pointChoice]);
+                            tempLine = brd.create('polarline', [reflectAboutCircle[1], reflectAboutCircle[0]], {
+                                name: "",
+                                visible: false
+                            });
+
+                            sample = brd.create('line', [reflectAboutCircle[1], reflectAboutCircle[0].center], {
+                                name: "",
+                                visible: false
+                            });
+
+                            kindPoint(allPoint, 'intersection', [sample, tempLine], allPointColor)
+                        }
+                        reflectAboutCircle = []
+                    }
+                }
+            } else {
+                reflectAboutPoint = []
+                reflectAboutCircle = []
+                reflectAboutLine = []
+                if (inverse.length == 0) {
+                    if (pointChoice + 1) {
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[pointChoice].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
+                        inverse.push(allPoint[pointChoice]);
+                    } else {
+                        createPoint(0, click, allPoint, 0, allPointColor, "point")
+                        inverse.push(allPoint[allPoint.length - 1]);
+                    }
+                } else if (inverse.length == 1) {
+                    if (pointChoice + 1) {
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[pointChoice].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
+                        inverse.push(allPoint[pointChoice]);
+                    } else {
+                        createPoint(0, click, allPoint, 0, allPointColor, "point")
+                        inverse.push(allPoint[allPoint.length - 1]);
+                    }
+                } else if (inverse.length == 2) {
+                    if (pointChoice + 1) {
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[pointChoice].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
+                        inverse.push(allPoint[pointChoice]);
+                    } else {
+                        createPoint(0, click, allPoint, 0, allPointColor, "point")
+                        inverse.push(allPoint[allPoint.length - 1]);
+                    }
+                } else {
+                    if (pointChoice + 1) {
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[pointChoice].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
+                        inverse.push(allPoint[pointChoice]);
+                    } else {
+                        createPoint(0, click, allPoint, 0, allPointColor, "point")
+                        inverse.push(allPoint[allPoint.length - 1]);
+                    }
+
+                    tempCircle = brd.create('circumcircle', [inverse[1], inverse[2], inverse[3]], {
+                        name: "",
+                        visible: false
+                    })
+
+                    tempLine = brd.create('line', [inverse[0], inverse[3]], {
+                        name: "",
+                        visible: false
+                    })
+
+                    inter.push(tempCircle);
+                    inter.push(tempLine);
+
+                    tempInter = brd.create('intersection', inter, {
+                        name: "",
+                        visible: false
+                    })
+                    if (checkConc(allPoint, tempInter)) {
+                        delete tempInter;
+                    } else {
+                        kindPoint(allPoint, 'intersection', inter, allPointColor)
+                    }
+
+                    tempInter = brd.create('intersection', [inter[0], inter[1], 1], {
+                        name: "",
+                        visible: false
+                    })
+
+                    if (checkConc(allPoint, tempInter)) {
+                        delete tempInter;
+                    } else {
+                        kindPoint(allPoint, 'intersection', [inter[0], inter[1], 1], allPointColor)
+                    }
+                    inter = []
                 }
             }
         }

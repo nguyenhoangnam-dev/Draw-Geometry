@@ -28,7 +28,8 @@ var point = doc.getElementById("point");
 var line = doc.getElementById("line");
 var circle = doc.getElementById("circle");
 var conic = doc.getElementById("conic");
-var choice = [mouse, point, line, circle, conic];
+var transform = doc.getElementById("transform");
+var choice = [mouse, point, line, circle, conic, transform];
 
 // This for color-picker
 var fill = doc.getElementById("fillColor");
@@ -121,7 +122,7 @@ var inCenter = []
 var perp = []
 
 // This all kind of line, point
-var pointKind = ["point", "intersection", "midpoint", "circumcenter", "incenter"]
+var pointKind = ["point", "intersection", "midpoint", "circumcenter", "incenter", "reflection"]
 var lineKind = ["line", "perpendicular", "parallel", "segment", "bisector", "polarline"]
 var circleKind = ["circle", "circumcircle", "incircle"]
 var conicKind = ["hyperbola", "ellipse", "conic", "parabola"]
@@ -156,6 +157,11 @@ var hyperbola = []
 
 var allConic = []
 
+var reflectAboutLine = []
+var reflectAboutPoint = []
+var reflectAboutCircle = []
+var inverse = []
+
 // This save color of allpoint
 var allPointColor = []
 var allLineColor = []
@@ -164,6 +170,8 @@ var allConicColor = []
 
 //  This is temporary store intersection point
 var tempInter
+var tempCircle
+var tempLine
 
 // This for screenshot 
 var download = doc.getElementById("download");
