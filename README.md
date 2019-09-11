@@ -21,7 +21,7 @@
 
 # Draw-Geometry (v1.8.2)
 
-This is [drawing-app](https://congviec18120062.github.io/Draw-Geometry/) with simple UI. Moreover, my inspiration is GSP and Geogebra which I use during highschool.
+This is [drawing-app](https://congviec18120062.github.io/Draw-Geometry/) with simple UI and lot of useful built-in for Euclidean geometry without calculation. Moreover, you can find similar with GSP and Geogebra which I love to use during highschool.
 
 ![Feuerbach theorem](https://raw.githubusercontent.com/congviec18120062/Draw-Geometry/master/img/Feuerbach%20theorem.jpg)
 This is Feuerbach theorem (Nine point circle tanglent incircle)
@@ -30,11 +30,13 @@ This is Feuerbach theorem (Nine point circle tanglent incircle)
 
 Just press [this link](https://congviec18120062.github.io/Draw-Geometry/) and enjoy.
 
-![Gif](http://g.recordit.co/UAhYTHf4ty.gif)
+![Change Color](https://raw.githubusercontent.com/congviec18120062/Draw-Geometry/master/img/ChangeColor.gif)
+
+![Draw Conic](https://raw.githubusercontent.com/congviec18120062/Draw-Geometry/master/img/DrawConic.gif)
 
 ## CUSTOMIZE
 
-We have 5 main type: Mouse, Point, Line, Circle and Conic with show in top-left
+We have 6 main kind of object: Mouse, Point, Line, Circle, Conic and Transform that can find in the top of web app.
 
 ### Mouse
 
