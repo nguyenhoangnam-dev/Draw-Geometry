@@ -86,6 +86,7 @@ doc.getElementsByTagName("body")[0].onclick = (click) => {
     } else {
         listOption.classList.remove("hide")
         search.value = ""
+        searchId[0] = 0
     }
 }
 
@@ -100,10 +101,10 @@ listOption.onclick = (click) => {
     search.value = searchValue;
     for (var i = 0; i < userList.items.length; i++) {
         if (searchValue === userList.items[i]._values.name) {
-            searchId = i
+            searchId[0] = i + 1
         }
     }
-
+    built_in = []
 }
 
 // This event for main type
@@ -1800,10 +1801,22 @@ doc.getElementById("jxgbox").addEventListener("click", click => {
         isCirc = []
         circum = []
         incircle = []
+        isConic = []
+        ellipse = []
+        parabola = []
+        hyperbola = []
+        reflectAboutPoint = []
+        reflectAboutCircle = []
+        inverse = []
+        reflectAboutLine = []
         pointChoice = whichAll(allPoint);
         lineChoice = whichAll(allLine);
         circChoice = whichAll(allCirc);
         textChoice = whichAll(allText);
+        if (pointChoice + 1) {
+            lineChoice = -1
+            circChoice = -1
+        }
 
         if (pointChoice + 1) {
             onlyChoice(allPoint, allPointColor)
@@ -2052,6 +2065,85 @@ doc.getElementById("jxgbox").addEventListener("click", click => {
                 })
                 allCircWidth[circChoice] = slider.value
             }
+        }
+        if (searchId[0] > 0) {
+            
+            if (searchId[0] == 1) {
+                
+                if (built_in.length == 0) {
+                    if (pointChoice + 1) {
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[pointChoice].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
+                        built_in.push(allPoint[pointChoice]);
+                    } else {
+                        createPoint(0, click, allPoint, 0, allPointColor, "point")
+                        built_in.push(allPoint[allPoint.length - 1]);
+                    }
+                } else if (built_in.length == 1) {
+                    if (pointChoice + 1) {
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[pointChoice].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
+                        built_in.push(allPoint[pointChoice]);
+                    } else {
+                        createPoint(0, click, allPoint, 0, allPointColor, "point")
+                        built_in.push(allPoint[allPoint.length - 1]);
+                    }
+                } else {
+                    if (pointChoice + 1) {
+                        onlyChoice(allPoint, allPointColor)
+                        allPoint[pointChoice].setAttribute({
+                            fillColor: "#ff0000",
+                            strokeColor: "#ff0000"
+                        })
+                        built_in.push(allPoint[pointChoice]);
+                    } else {
+                        createPoint(0, click, allPoint, 0, allPointColor, "point")
+                        built_in.push(allPoint[allPoint.length - 1]);
+                    }
+    
+                    tempLine = brd.create('bisector', built_in, {
+                        name: "",
+                        visible: false
+                    })
+    
+                    tempLine1 = brd.create('perpendicular', [tempLine, built_in[1]], {
+                        name: "",
+                        visible: false
+                    })
+    
+                    tempLine2 = brd.create('line', [built_in[0], built_in[2]], {
+                        name: "",
+                        visible: false
+                    })
+    
+                    tempInter = brd.create('intersection', [tempLine, tempLine2, 0], {
+                        name: "",
+                        visible: false
+                    })
+    
+                    tempInter1 = brd.create('intersection', [tempLine1, tempLine2, 0], {
+                        name: "",
+                        visible: false
+                    })
+    
+                    allCirc.push(brd.create('circumcircle', [built_in[1], tempInter, tempInter1], {
+                        strokeColor: "#000000",
+                        highlightStrokeWidth: 2,
+                        strokeWidth: 1
+                    }))
+                    allCircColor.push("#000000")
+                    allCircWidth.push(1)
+                    built_in = []
+                    search.value = ""
+                    searchId[0] = 0
+                }
+            } 
         }
     }
 });

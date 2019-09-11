@@ -170,8 +170,11 @@ var allConicColor = []
 
 //  This is temporary store intersection point
 var tempInter
+var tempInter1
 var tempCircle
 var tempLine
+var tempLine1
+var tempLine2
 
 // This for screenshot 
 var download = doc.getElementById("download");
@@ -186,6 +189,8 @@ var options = {
     valueNames: ['id', 'name'],
     item: '<li><p class="id name"></p></li>'
 };
+
+var built_in = []
 
 var values = [{
         id: 1,
@@ -412,4 +417,4 @@ var textChoice = doc.getElementsByClassName("name")
 var userList = new List('users', options, values)
 userList.show(1, 10);
 
-var searchId
+var searchId = []

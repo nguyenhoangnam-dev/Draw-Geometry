@@ -1,5 +1,5 @@
 <p align="center">
- <img src="https://raw.githubusercontent.com/congviec18120062/Draw-Geometry/master/img/TitleLogo.png" alt="Draw-Geometry (v1.3.0)" />
+ <img src="https://raw.githubusercontent.com/congviec18120062/Draw-Geometry/master/img/TitleLogo.png" alt="Draw-Geometry (v1.8.2)" />
 </p>
 <p align="center">
     <a href="https://github.com/congviec18120062/Draw-Geometry/issues" alt="GitHub issues">
@@ -12,14 +12,14 @@
         <img src="https://img.shields.io/badge/geometry-Euclid-blue" />
     </a>
     <a href="https://github.com/congviec18120062/Draw-Geometry/blob/master" alt="GitHub license">
-        <img src="https://img.shields.io/badge/version-1.7.3-orange" />
+        <img src="https://img.shields.io/badge/version-1.8.2-orange" />
     </a>
     <a href="https://github.com/congviec18120062/Draw-Geometry/blob/master" alt="GitHub license">
         <img src="https://img.shields.io/badge/framework-JSXGraph-brightgreen" />
     </a>
 </p>
 
-# Draw-Geometry (v1.7.5)
+# Draw-Geometry (v1.8.2)
 
 This is [drawing-app](https://congviec18120062.github.io/Draw-Geometry/) with simple UI. Moreover, my inspiration is GSP and Geogebra which I use during highschool.
 
