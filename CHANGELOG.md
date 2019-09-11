@@ -4,23 +4,54 @@ Link of web [draw-geometry](https://congviec18120062.github.io/Draw-Geometry/).
 
 ## [Unreleased] - yyyy-mm-dd
 
-Here we write to make UI more comfortable.
+This is thing that I want to improve in next version
 
 ### Added
 
 - [index.html](https://github.com/congviec18120062/Draw-Geometry/blob/master/index.html)
-  Add more to change dash, label
+  :sparkles: Add more to change dash, label
 - [index.html](https://github.com/congviec18120062/Draw-Geometry/blob/master/index.html)
-  Add construct some built-in in search
-- [index.html](https://github.com/congviec18120062/Draw-Geometry/blob/master/index.html)
-  Add trance 
+  :sparkles: Add trance 
+- [draw-geometry](https://congviec18120062.github.io/Draw-Geometry/)
+  :boom: Using Webpack to manage framework
+- [draw-geometry](https://congviec18120062.github.io/Draw-Geometry/)
+  :pencil: Write docs and blog
 
 ### Changed
+
+- [index.html](https://github.com/congviec18120062/Draw-Geometry/blob/master/index.html)
+  :fire: Remove preloader
 
 ### Fixed
 
 - [index.js](https://github.com/congviec18120062/Draw-Geometry/blob/master/js/index.js)
-  Can not make circumcenter from circle
+  :bug: Can not make circumcenter from circle
+
+## [1.8.2] - 2019-09-11
+
+:sparkles: This is version 1.8.2 with add some new feature and improve performance
+
+Link of web [draw-geometry](https://congviec18120062.github.io/Draw-Geometry/).
+
+### Added
+
+- [variable.js](https://github.com/congviec18120062/Draw-Geometry/blob/master/js/variable.js)
+  :sparkles: Add reflectAboutLine, reflectAboutCircle, reflectAboutPoint, inverse
+- [index.html](https://github.com/congviec18120062/Draw-Geometry/blob/master/index.html)
+  :sparkles: Add transform object: Reflect about line, Reflect about point, Reflect about circle and Inversion 
+
+
+### Changed
+
+- [index.html](https://github.com/congviec18120062/Draw-Geometry/blob/master/index.html)
+  :speech_balloon: Reflect about line -> Rline, Reflect about point -> RPoint and Reflect about circle -> RCircle.
+- [index.html](https://github.com/congviec18120062/Draw-Geometry/blob/master/index.html)
+  :boom: Stop using preloader
+- [index.html](https://github.com/congviec18120062/Draw-Geometry/blob/master/index.html)
+  :zap: Change CDN to framework file 
+
+### Fixed
+
 
 ## [1.7.0] - 2019-08-9
 
@@ -32,7 +63,7 @@ Link of web [draw-geometry](https://congviec18120062.github.io/Draw-Geometry/).
 ### Added
 
 - [function.js](https://github.com/congviec18120062/Draw-Geometry/blob/master/js/function.js)
-  :sparkles: Add kindPoint() to create newpoint.
+  Add kindPoint() to create newpoint.
 - [variable.js](https://github.com/congviec18120062/Draw-Geometry/blob/master/js/variable.js)
   Add allConic, isConic, ellipse, parabola, hyperbola, conicKind to create conic.
 - [index.html](https://github.com/congviec18120062/Draw-Geometry/blob/master/index.html)
