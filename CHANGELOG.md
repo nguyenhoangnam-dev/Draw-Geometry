@@ -32,7 +32,7 @@ Link of web [draw-geometry](https://congviec18120062.github.io/Draw-Geometry/).
 ### Added
 
 - [function.js](https://github.com/congviec18120062/Draw-Geometry/blob/master/js/function.js)
-  Add kindPoint() to create newpoint.
+  :sparkles: Add kindPoint() to create newpoint.
 - [variable.js](https://github.com/congviec18120062/Draw-Geometry/blob/master/js/variable.js)
   Add allConic, isConic, ellipse, parabola, hyperbola, conicKind to create conic.
 - [index.html](https://github.com/congviec18120062/Draw-Geometry/blob/master/index.html)
